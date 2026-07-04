@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jujhtwt3yqwe" path="res://textures/freddy titch/441.png" id="3_r57hc"]
 [ext_resource type="Texture2D" uid="uid://cferd7md2oy11" path="res://textures/freddy titch/442.png" id="4_dldj3"]
 [ext_resource type="Script" uid="uid://vd14rou6f12k" path="res://scripts/freddy.gd" id="5_cekq1"]
-[ext_resource type="Shader" uid="uid://bij4uthgksrg8" path="res://tittle.gdshader" id="6_47nif"]
+[ext_resource type="Shader" uid="uid://bij4uthgksrg8" path="res://shaders/tittle.gdshader" id="6_47nif"]
 [ext_resource type="Texture2D" uid="uid://cfgysaoqgpuqq" path="res://textures/static/12.png" id="6_kmavj"]
 [ext_resource type="Texture2D" uid="uid://wjrabfrrtvj1" path="res://textures/static/13.png" id="7_47nif"]
 [ext_resource type="Texture2D" uid="uid://dyxs4e032k2dw" path="res://textures/static/14.png" id="8_dxsc5"]
@@ -14,6 +14,22 @@
 [ext_resource type="Texture2D" uid="uid://0i43rvagp7cy" path="res://textures/static/17.png" id="11_7gvji"]
 [ext_resource type="Texture2D" uid="uid://bwrlfqxcs107w" path="res://textures/static/18.png" id="12_xcqad"]
 [ext_resource type="Texture2D" uid="uid://u76r1lutohs7" path="res://textures/static/20.png" id="13_bh0oy"]
+[ext_resource type="Texture2D" uid="uid://ce1y3xtumjdt3" path="res://textures/static/8.png" id="17_25gw8"]
+[ext_resource type="Texture2D" uid="uid://jv680gjcbm3x" path="res://textures/static/10.png" id="19_jqunf"]
+[ext_resource type="Texture2D" uid="uid://dcbsnl02po4u3" path="res://textures/static/21.png" id="20_kexj1"]
+[ext_resource type="Texture2D" uid="uid://d04h0txkr5kcv" path="res://textures/static/22.png" id="21_wnw8g"]
+[ext_resource type="Texture2D" uid="uid://b3iwtm4qo0sgl" path="res://textures/static/430.png" id="23_st3ag"]
+[ext_resource type="Texture2D" uid="uid://c6kpb24bp2i8x" path="res://textures/static/434.png" id="24_qqdkf"]
+[ext_resource type="Texture2D" uid="uid://ci4kg2jyh015o" path="res://textures/static/435.png" id="25_yccba"]
+[ext_resource type="Texture2D" uid="uid://bdnelwxkv7eb1" path="res://textures/static/436.png" id="26_qn3qb"]
+[ext_resource type="Script" uid="uid://b5xay8ujkf7eg" path="res://scripts/divided_static.gd" id="26_tr0cc"]
+[ext_resource type="Texture2D" uid="uid://c7utdpsotkkb" path="res://textures/static/437.png" id="27_dxxag"]
+[ext_resource type="Script" uid="uid://dl3dw808xr13h" path="res://scripts/manu button.gd" id="27_ntufj"]
+[ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="28_2t4ok"]
+[ext_resource type="AudioStream" uid="uid://dvsatvo5ptqph" path="res://audio/darkness music.wav" id="28_ccuh4"]
+[ext_resource type="Texture2D" uid="uid://c648v5u724cy4" path="res://textures/static/438.png" id="28_yxlfc"]
+[ext_resource type="AudioStream" uid="uid://dhen7uyftrv80" path="res://audio/static.wav" id="29_3eqvg"]
+[ext_resource type="Texture2D" uid="uid://dbg6bp4y13s15" path="res://textures/static/439.png" id="29_5p1tb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvtym"]
 animations = [{
@@ -30,14 +46,15 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_dldj3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dxsc5"]
 shader = ExtResource("6_47nif")
-shader_parameter/threshold = 0.1
+shader_parameter/threshold = 0.3
+shader_parameter/alpha = 0.4
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_skm0l"]
 animations = [{
@@ -66,10 +83,129 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_bh0oy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 60.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tw5ci"]
+shader = ExtResource("6_47nif")
+shader_parameter/threshold = 0.6
+shader_parameter/alpha = 0.2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odjk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_25gw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jqunf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kexj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wnw8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_st3ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qqdkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yccba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_qn3qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_dxxag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_yxlfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5p1tb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_tr0cc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_odjk5"]
+gradient = SubResource("Gradient_tr0cc")
+
+[sub_resource type="Animation" id="Animation_ntufj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, -69)]
+}
+
+[sub_resource type="Animation" id="Animation_ccuh4"]
+resource_name = "scan"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.93333334, 0.033333335, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-34, -96), Vector2(-34, -96), Vector2(-34, 768)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3eqvg"]
+_data = {
+&"RESET": SubResource("Animation_ntufj"),
+&"scan": SubResource("Animation_ccuh4")
+}
+
+[sub_resource type="FontFile" id="FontFile_odjk5"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/80/0/ascent = 0.0
+cache/0/80/0/descent = 0.0
+cache/0/80/0/underline_position = 0.0
+cache/0/80/0/underline_thickness = 0.0
+cache/0/80/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
 
 [node name="Tittle" type="Node2D" unique_id=515226153]
 position = Vector2(1, -4)
@@ -88,7 +224,7 @@ metadata/_edit_lock_ = true
 
 [node name="Freddy" type="AnimatedSprite2D" parent="." unique_id=1818437710]
 position = Vector2(3.000061, 7)
-scale = Vector2(1.4958333, 1.4958333)
+scale = Vector2(0.99861115, 0.99861115)
 sprite_frames = SubResource("SpriteFrames_bvtym")
 centered = false
 script = ExtResource("5_cekq1")
@@ -99,10 +235,100 @@ one_shot = true
 [node name="twitch" type="Timer" parent="Freddy" unique_id=1034280178]
 one_shot = true
 
+[node name="fade" type="Timer" parent="Freddy" unique_id=713377942]
+wait_time = 0.3
+autostart = true
+
 [node name="static" type="AnimatedSprite2D" parent="." unique_id=1481337039]
 material = SubResource("ShaderMaterial_dxsc5")
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.0055555, 1.0055555)
 sprite_frames = SubResource("SpriteFrames_skm0l")
 autoplay = "default"
 frame_progress = 0.102205284
 centered = false
+
+[node name="divided static" type="AnimatedSprite2D" parent="." unique_id=1042177576]
+visible = false
+material = SubResource("ShaderMaterial_tw5ci")
+sprite_frames = SubResource("SpriteFrames_odjk5")
+autoplay = "default"
+frame = 3
+frame_progress = 0.65646195
+centered = false
+script = ExtResource("26_tr0cc")
+
+[node name="rest" type="Timer" parent="divided static" unique_id=924860578]
+one_shot = true
+
+[node name="twitch" type="Timer" parent="divided static" unique_id=929674682]
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=646519506]
+modulate = Color(1, 1, 1, 0.11764706)
+position = Vector2(-34, -69)
+scale = Vector2(20.875, 0.84375)
+texture = SubResource("GradientTexture2D_odjk5")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1701975186]
+libraries/ = SubResource("AnimationLibrary_3eqvg")
+autoplay = &"scan"
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1930168519]
+
+[node name="arrow" type="Label" parent="GUI" unique_id=1689320039]
+offset_left = 81.0
+offset_top = 340.0
+offset_right = 138.0
+offset_bottom = 409.0
+theme_override_fonts/font = SubResource("FontFile_odjk5")
+theme_override_font_sizes/font_size = 50
+text = ">>"
+vertical_alignment = 1
+
+[node name="continue" type="Label" parent="GUI" unique_id=1818065103]
+offset_left = 163.0
+offset_top = 431.0
+offset_right = 337.0
+offset_bottom = 500.0
+mouse_filter = 0
+theme_override_fonts/font = SubResource("FontFile_odjk5")
+theme_override_font_sizes/font_size = 50
+text = "Nastavi"
+vertical_alignment = 1
+script = ExtResource("27_ntufj")
+
+[node name="new game" type="Label" parent="GUI" unique_id=1369102484]
+offset_left = 161.0
+offset_top = 340.0
+offset_right = 390.0
+offset_bottom = 409.0
+mouse_filter = 0
+theme_override_fonts/font = SubResource("FontFile_odjk5")
+theme_override_font_sizes/font_size = 50
+text = "Nova Igra"
+vertical_alignment = 1
+script = ExtResource("27_ntufj")
+
+[node name="tittle" type="Label" parent="GUI" unique_id=1118652815]
+offset_left = 158.0
+offset_top = 75.0
+offset_right = 429.0
+offset_bottom = 288.0
+theme_override_fonts/font = SubResource("FontFile_odjk5")
+theme_override_font_sizes/font_size = 50
+text = "Pet Noci
+Kod
+Moga Dede"
+vertical_alignment = 1
+
+[node name="select change" type="AudioStreamPlayer2D" parent="GUI" unique_id=1675569127]
+stream = ExtResource("28_2t4ok")
+
+[node name="music" type="AudioStreamPlayer2D" parent="." unique_id=1735104250]
+stream = ExtResource("28_ccuh4")
+autoplay = true
+
+[node name="static2" type="AudioStreamPlayer2D" parent="." unique_id=1391767250]
+stream = ExtResource("29_3eqvg")
+autoplay = true
