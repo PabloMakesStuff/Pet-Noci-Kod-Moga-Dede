@@ -25,4 +25,3 @@ func twitchStart() -> void:
 
 func fadeTimeout() -> void:
 	modulate.a = randf_range(0.4, 1.0)
-	$"../static".material.set_shader_parameter('alpha',randf_range(0.4, 0.6))
