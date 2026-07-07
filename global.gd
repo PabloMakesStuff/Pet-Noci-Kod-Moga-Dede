@@ -1,5 +1,8 @@
 extends Node
 
+var office_pan = 0.0
+@export var isOnDoorSprite: bool
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 

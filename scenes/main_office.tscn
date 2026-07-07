@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dmbdhreqo3rdl"]
+
+[ext_resource type="Texture2D" uid="uid://v6bj3snlowkj" path="res://textures/assets/office/desk_test.jpg" id="1_r15ya"]
+[ext_resource type="Script" uid="uid://bmpbs41672xcu" path="res://scripts/office_room.gd" id="2_e00qi"]
+[ext_resource type="Script" uid="uid://dve5b3g0jrvmo" path="res://scripts/pan_view.gd" id="2_t7ome"]
+[ext_resource type="Script" uid="uid://bbfxbvc0430dp" path="res://scripts/door_colision.gd" id="3_01122"]
+[ext_resource type="Texture2D" uid="uid://bxvrgapci3jhw" path="res://icon.svg" id="4_om1mf"]
+[ext_resource type="AudioStream" uid="uid://dvsatvo5ptqph" path="res://audio/darkness music.wav" id="4_qlsm3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m0v6u"]
+radius = 185.75107
+height = 1036.02
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
+size = Vector2(498, 750)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0v6u"]
+size = Vector2(409, 753)
+
+[node name="main_office" type="Node2D" unique_id=1747683782]
+
+[node name="DeskTest" type="Sprite2D" parent="." unique_id=1022701733]
+process_mode = 3
+position = Vector2(602, 359)
+scale = Vector2(0.382232, 0.38223198)
+texture = ExtResource("1_r15ya")
+script = ExtResource("2_e00qi")
+
+[node name="doorColision" type="Area2D" parent="DeskTest" unique_id=691084375]
+script = ExtResource("3_01122")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DeskTest/doorColision" unique_id=1058535023]
+position = Vector2(-1574.9597, -939.2202)
+scale = Vector2(2.6162121, 2.6162124)
+stream = ExtResource("4_qlsm3")
+
+[node name="doorSprite" type="Sprite2D" parent="DeskTest/doorColision" unique_id=15299682]
+process_mode = 3
+z_index = 2
+position = Vector2(-1844.4296, -20.929688)
+scale = Vector2(2.6162121, 2.6162124)
+texture = ExtResource("4_om1mf")
+
+[node name="doorColision" type="CollisionShape2D" parent="DeskTest/doorColision" unique_id=823170123]
+z_index = 1
+position = Vector2(-1839.1971, -31.394548)
+shape = SubResource("CapsuleShape2D_m0v6u")
+
+[node name="left" type="Area2D" parent="." unique_id=1520612023]
+process_mode = 3
+z_index = 2
+script = ExtResource("2_t7ome")
+
+[node name="leftRec" type="CollisionShape2D" parent="left" unique_id=207499393]
+position = Vector2(65, 360)
+shape = SubResource("RectangleShape2D_odjk5")
+
+[node name="right" type="Area2D" parent="." unique_id=1334136740]
+process_mode = 3
+visible = false
+z_index = 2
+script = ExtResource("2_t7ome")
+
+[node name="rigthRec" type="CollisionShape2D" parent="right" unique_id=892750444]
+process_mode = 3
+visible = false
+position = Vector2(1163, 358)
+shape = SubResource("RectangleShape2D_m0v6u")
