@@ -4,18 +4,20 @@
 [ext_resource type="Script" uid="uid://bmpbs41672xcu" path="res://scripts/office_room.gd" id="2_e00qi"]
 [ext_resource type="Script" uid="uid://dve5b3g0jrvmo" path="res://scripts/pan_view.gd" id="2_t7ome"]
 [ext_resource type="Script" uid="uid://bbfxbvc0430dp" path="res://scripts/door_colision.gd" id="3_01122"]
-[ext_resource type="Texture2D" uid="uid://bxvrgapci3jhw" path="res://icon.svg" id="4_om1mf"]
 [ext_resource type="AudioStream" uid="uid://dvsatvo5ptqph" path="res://audio/darkness music.wav" id="4_qlsm3"]
+[ext_resource type="Texture2D" uid="uid://hqr3tr7xqpxu" path="res://textures/assets/office/Rectangle 191.png" id="5_qlsm3"]
+[ext_resource type="FontFile" uid="uid://bj6p0ggute0ox" path="res://fonts/ShareTech-UI.ttf" id="7_re7b1"]
+[ext_resource type="AudioStream" uid="uid://crpdhfks07ooa" path="res://audio/PartyFavorraspyPart_AC01__3.wav" id="9_1hc3g"]
+[ext_resource type="Texture2D" uid="uid://cwv43j7h8gnct" path="res://textures/assets/office/door_test.jpg" id="10_1hc3g"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m0v6u"]
-radius = 185.75107
-height = 1036.02
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
-size = Vector2(498, 750)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlsm3"]
+size = Vector2(544.14746, 913.0581)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0v6u"]
-size = Vector2(409, 753)
+size = Vector2(62.625, 67.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
+size = Vector2(368, 750)
 
 [node name="main_office" type="Node2D" unique_id=1747683782]
 
@@ -25,44 +27,86 @@ position = Vector2(602, 359)
 scale = Vector2(0.382232, 0.38223198)
 texture = ExtResource("1_r15ya")
 script = ExtResource("2_e00qi")
+min_pan = 0.0
 
 [node name="doorColision" type="Area2D" parent="DeskTest" unique_id=691084375]
 script = ExtResource("3_01122")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DeskTest/doorColision" unique_id=1058535023]
+process_mode = 3
 position = Vector2(-1574.9597, -939.2202)
 scale = Vector2(2.6162121, 2.6162124)
 stream = ExtResource("4_qlsm3")
 
 [node name="doorSprite" type="Sprite2D" parent="DeskTest/doorColision" unique_id=15299682]
 process_mode = 3
+modulate = Color(1, 1, 1, 0.9411765)
 z_index = 2
-position = Vector2(-1844.4296, -20.929688)
-scale = Vector2(2.6162121, 2.6162124)
-texture = ExtResource("4_om1mf")
+position = Vector2(-1817.167, -31.394547)
+scale = Vector2(2.219702, 1.5937294)
+texture = ExtResource("5_qlsm3")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="DeskTest/doorColision/doorSprite" unique_id=87085622]
+z_index = 3
+offset_left = -77.10689
+offset_top = -239.66864
+offset_right = 73.75809
+offset_bottom = 47.60547
+theme_override_fonts/font = ExtResource("7_re7b1")
+theme_override_font_sizes/font_size = 40
+text = "Pritisni da se okrenes prema vratima"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="DeskTest/doorColision/doorSprite" unique_id=856195662]
+z_index = 3
+offset_left = -42.926483
+offset_top = 82.07831
+offset_right = 38.39913
+offset_bottom = 174.00604
+theme_override_fonts/font = ExtResource("7_re7b1")
+theme_override_font_sizes/font_size = 80
+text = "<<"
+metadata/_edit_lock_ = true
 
 [node name="doorColision" type="CollisionShape2D" parent="DeskTest/doorColision" unique_id=823170123]
 z_index = 1
-position = Vector2(-1839.1971, -31.394548)
-shape = SubResource("CapsuleShape2D_m0v6u")
+position = Vector2(-1841.801, -32.702637)
+shape = SubResource("RectangleShape2D_qlsm3")
+metadata/_edit_lock_ = true
+
+[node name="bonk" type="Area2D" parent="." unique_id=1334136740]
+process_mode = 3
+z_index = 2
+
+[node name="bonk" type="CollisionShape2D" parent="bonk" unique_id=892750444]
+process_mode = 3
+position = Vector2(297.6875, 404.3125)
+shape = SubResource("RectangleShape2D_m0v6u")
+
+[node name="bonk2" type="AudioStreamPlayer2D" parent="bonk" unique_id=292805840]
+stream = ExtResource("9_1hc3g")
 
 [node name="left" type="Area2D" parent="." unique_id=1520612023]
 process_mode = 3
 z_index = 2
 script = ExtResource("2_t7ome")
+metadata/_edit_lock_ = true
 
 [node name="leftRec" type="CollisionShape2D" parent="left" unique_id=207499393]
-position = Vector2(65, 360)
+position = Vector2(0, 360)
 shape = SubResource("RectangleShape2D_odjk5")
+metadata/_edit_lock_ = true
 
-[node name="right" type="Area2D" parent="." unique_id=1334136740]
-process_mode = 3
-visible = false
-z_index = 2
-script = ExtResource("2_t7ome")
+[node name="DoorTest" type="Sprite2D" parent="." unique_id=257253116]
+z_index = -1
+position = Vector2(606.8718, 357.55038)
+rotation = 1.5707964
+scale = Vector2(0.17539173, 0.17539169)
+texture = ExtResource("10_1hc3g")
 
-[node name="rigthRec" type="CollisionShape2D" parent="right" unique_id=892750444]
-process_mode = 3
-visible = false
-position = Vector2(1163, 358)
-shape = SubResource("RectangleShape2D_m0v6u")
+[connection signal="input_event" from="DeskTest/doorColision" to="DeskTest" method="_on_door_colision_input_event"]
+[connection signal="input_event" from="bonk" to="DeskTest" method="_on_bonk_input_event"]
