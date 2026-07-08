@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d1p6gpui6lxay"]
+
+[ext_resource type="Texture2D" uid="uid://cwv43j7h8gnct" path="res://textures/assets/office/door_test.jpg" id="1_cis7l"]
+
+[node name="doorScene" type="Node2D" unique_id=1093270844]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005560205]
+position = Vector2(798, 2.7133064)
+rotation = 1.5707964
+scale = Vector2(0.1762208, 0.17622079)
+texture = ExtResource("1_cis7l")
+centered = false
