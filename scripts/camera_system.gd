@@ -1,6 +1,10 @@
-extends Control
+extends CanvasLayer
 
-@onready var camera_system: AnimatedSprite2D = $"../CameraSystem"
+@onready var camera_feed: AnimatedSprite2D = $CameraFeed
+@onready var camera_map_ui: Control = $CameraMapUI
+
+func _ready() -> void:
+	visible = false
 
 func _on_bathroom_pressed() -> void:
 	show_camera('bathroom')
@@ -21,6 +25,6 @@ func _on_balcony_pressed() -> void:
 	show_camera('balcony')
 
 func show_camera(animation_name: String) -> void:
-	$camSwitch.play()
-	camera_system.play(animation_name)
-	camera_system.visible = true
+	$CameraMapUI/camSwitch.play()
+	camera_feed.play(animation_name)
+	camera_feed.visible = true

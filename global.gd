@@ -1,6 +1,7 @@
 extends Node
 
-var office_pan = 0.0
+var isDoorClosed : bool = true
+var office_pan : float = 0.0
 @export var isOnDoorSprite: bool
 var camera_active: bool = false
 

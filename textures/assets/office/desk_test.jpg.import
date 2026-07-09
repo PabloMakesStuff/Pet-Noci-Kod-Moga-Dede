@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v6bj3snlowkj"
-path="res://.godot/imported/desk_test.jpg-60af2daf6c795123f84494a272e6a3f8.ctex"
+path.s3tc="res://.godot/imported/desk_test.jpg-60af2daf6c795123f84494a272e6a3f8.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/assets/office/desk_test.jpg"
-dest_files=["res://.godot/imported/desk_test.jpg-60af2daf6c795123f84494a272e6a3f8.ctex"]
+dest_files=["res://.godot/imported/desk_test.jpg-60af2daf6c795123f84494a272e6a3f8.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

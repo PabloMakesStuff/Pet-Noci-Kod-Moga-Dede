@@ -1,12 +1,60 @@
 [gd_scene format=3 uid="uid://d1p6gpui6lxay"]
 
-[ext_resource type="Texture2D" uid="uid://cwv43j7h8gnct" path="res://textures/assets/office/door_test.jpg" id="1_cis7l"]
+[ext_resource type="Texture2D" uid="uid://berbicio2oxho" path="res://textures/assets/office/door_test2.jpg" id="1_0y7gj"]
+[ext_resource type="Texture2D" uid="uid://bn24ky0ah4ro6" path="res://textures/assets/office/door_test.jpg" id="1_cis7l"]
+[ext_resource type="Script" uid="uid://n07ixjct27yd" path="res://scripts/doorScene_back.gd" id="2_d4rin"]
+[ext_resource type="Texture2D" uid="uid://hqr3tr7xqpxu" path="res://textures/assets/office/Rectangle 191.png" id="3_0y7gj"]
+[ext_resource type="Script" uid="uid://clgngfxu2u32p" path="res://scripts/noor.gd" id="3_dulfx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odjk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0y7gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_cis7l")
+}],
+"loop": 1,
+"name": &"noor_empty",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
+size = Vector2(152.5, 504)
 
 [node name="doorScene" type="Node2D" unique_id=1093270844]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005560205]
-position = Vector2(798, 2.7133064)
-rotation = 1.5707964
-scale = Vector2(0.1762208, 0.17622079)
-texture = ExtResource("1_cis7l")
+[node name="noor" type="AnimatedSprite2D" parent="." unique_id=1860319245]
+position = Vector2(-164, 2.999878)
+scale = Vector2(0.80721533, 0.80721533)
+sprite_frames = SubResource("SpriteFrames_odjk5")
+animation = &"noor_empty"
+frame = 1
+frame_progress = 0.09376446
 centered = false
+script = ExtResource("3_dulfx")
+
+[node name="Button" type="Button" parent="noor" unique_id=1907550143]
+offset_left = 810.19275
+offset_top = 408.81302
+offset_right = 1185.5573
+offset_bottom = 613.2196
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1704012298]
+script = ExtResource("2_d4rin")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=779530022]
+position = Vector2(1182.9999, 357)
+scale = Vector2(0.8192771, 0.81927717)
+texture = ExtResource("3_0y7gj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=75333592]
+position = Vector2(1181.25, 356)
+shape = SubResource("RectangleShape2D_odjk5")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[connection signal="pressed" from="noor/Button" to="noor" method="_on_button_pressed"]
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]

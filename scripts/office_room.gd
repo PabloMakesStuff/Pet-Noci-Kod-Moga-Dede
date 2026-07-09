@@ -26,5 +26,5 @@ func _on_door_colision_input_event(viewport: Node, event: InputEvent, shape_idx:
 	if Global.camera_active == true:
 		visible = false
 	if event.is_action_pressed('guiClick'):
-		get_tree().paused = true
+		#get_tree().change_scene_to_file("res://scenes/door_scene.tscn")
 		Transition.fade_to_scene("res://scenes/door_scene.tscn")

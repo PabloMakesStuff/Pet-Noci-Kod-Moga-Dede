@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn24ky0ah4ro6"
-path="res://.godot/imported/door_test.jpg-cd6438d969e4e4dca4de3db81576e799.ctex"
+uid="uid://di4xprt33hqle"
+path="res://.godot/imported/desk_test2.jpg-10c2ee4e0e8439f9d6db8bf5ddd8c1ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/assets/office/door_test.jpg"
-dest_files=["res://.godot/imported/door_test.jpg-cd6438d969e4e4dca4de3db81576e799.ctex"]
+source_file="res://textures/assets/office/desk_test2.jpg"
+dest_files=["res://.godot/imported/desk_test2.jpg-10c2ee4e0e8439f9d6db8bf5ddd8c1ad.ctex"]
 
 [params]
 

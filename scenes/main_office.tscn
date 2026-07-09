@@ -10,17 +10,6 @@
 [ext_resource type="FontFile" uid="uid://bj6p0ggute0ox" path="res://fonts/ShareTech-UI.ttf" id="7_re7b1"]
 [ext_resource type="AudioStream" uid="uid://crpdhfks07ooa" path="res://audio/PartyFavorraspyPart_AC01__3.wav" id="9_1hc3g"]
 [ext_resource type="Texture2D" uid="uid://dfcfi5g0a2a4x" path="res://textures/assets/office/prompt_test.png" id="9_efwtk"]
-[ext_resource type="Texture2D" uid="uid://cbg1j1ydsds8y" path="res://textures/assets/camera/bacony_test.jpg" id="11_hjv13"]
-[ext_resource type="Texture2D" uid="uid://ke0t8mf4npo8" path="res://textures/assets/camera/bathroom_test.jpg" id="12_d1wqe"]
-[ext_resource type="Texture2D" uid="uid://gcagpeu8o7cp" path="res://textures/assets/camera/hallway_test.jpg" id="13_wwtml"]
-[ext_resource type="Texture2D" uid="uid://cl7thj66tmt8r" path="res://textures/assets/camera/kitchen_test.jpg" id="14_wfclp"]
-[ext_resource type="Texture2D" uid="uid://phhkba0wm1pj" path="res://textures/assets/camera/livingroom_test.jpg" id="15_upcfv"]
-[ext_resource type="Texture2D" uid="uid://c5xkd0jxwmw7j" path="res://textures/assets/camera/room1_test.jpg" id="16_ear21"]
-[ext_resource type="Script" uid="uid://p6cu6iujd8tc" path="res://scripts/camera_map_ui.gd" id="17_upcfv"]
-[ext_resource type="Texture2D" uid="uid://cob4us106kmj0" path="res://textures/assets/camera/mapa.png" id="18_upcfv"]
-[ext_resource type="Texture2D" uid="uid://ditt3j5djtyya" path="res://textures/assets/camera/camera_notsel.png" id="19_ear21"]
-[ext_resource type="Texture2D" uid="uid://kvocifajv6qu" path="res://textures/assets/camera/camera_select.png" id="20_ou6ys"]
-[ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="21_ear21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlsm3"]
 size = Vector2(544.14746, 913.0581)
@@ -29,76 +18,22 @@ size = Vector2(544.14746, 913.0581)
 size = Vector2(62.625, 67.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
-size = Vector2(368, 750)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_odjk5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_hjv13")
-}],
-"loop": 1,
-"name": &"balcony",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_d1wqe")
-}],
-"loop": 1,
-"name": &"bathroom",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_wwtml")
-}],
-"loop": 1,
-"name": &"hallway",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_wfclp")
-}],
-"loop": 1,
-"name": &"kitchen",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("15_upcfv")
-}],
-"loop": 1,
-"name": &"livingroom",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_ear21")
-}],
-"loop": 1,
-"name": &"room1",
-"speed": 5.0
-}]
+size = Vector2(333.5, 750)
 
 [node name="main_office" type="Node2D" unique_id=1747683782]
 script = ExtResource("1_1hc3g")
 
 [node name="DeskTest" type="Sprite2D" parent="." unique_id=1022701733]
 process_mode = 3
-position = Vector2(602, 359)
-scale = Vector2(0.382232, 0.38223198)
+position = Vector2(540, 363)
+scale = Vector2(0.8165276, 0.81652755)
 texture = ExtResource("1_r15ya")
 script = ExtResource("2_e00qi")
 min_pan = 0.0
 
-[node name="promptForCam" type="Sprite2D" parent="DeskTest" unique_id=261758910]
-position = Vector2(259.005, 672.3666)
-scale = Vector2(0.6949313, 0.6949314)
-texture = ExtResource("9_efwtk")
-
 [node name="doorColision" type="Area2D" parent="DeskTest" unique_id=691084375]
+position = Vector2(36.391785, 3.9924622)
+scale = Vector2(0.44807097, 0.448071)
 script = ExtResource("3_01122")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DeskTest/doorColision" unique_id=1058535023]
@@ -107,11 +42,16 @@ position = Vector2(-1574.9597, -939.2202)
 scale = Vector2(2.6162121, 2.6162124)
 stream = ExtResource("4_qlsm3")
 
+[node name="doorColision" type="CollisionShape2D" parent="DeskTest/doorColision" unique_id=823170123]
+z_index = 1
+position = Vector2(-1838.7107, -99.108185)
+shape = SubResource("RectangleShape2D_qlsm3")
+
 [node name="doorSprite" type="Sprite2D" parent="DeskTest/doorColision" unique_id=15299682]
 process_mode = 3
 modulate = Color(1, 1, 1, 0.9411765)
-z_index = 2
-position = Vector2(-1817.167, -31.394547)
+z_index = 8
+position = Vector2(-1871.5099, -101.84144)
 scale = Vector2(2.219702, 1.5937294)
 texture = ExtResource("5_qlsm3")
 
@@ -140,10 +80,10 @@ theme_override_font_sizes/font_size = 80
 text = "<<"
 metadata/_edit_lock_ = true
 
-[node name="doorColision" type="CollisionShape2D" parent="DeskTest/doorColision" unique_id=823170123]
-z_index = 1
-position = Vector2(-1841.801, -32.702637)
-shape = SubResource("RectangleShape2D_qlsm3")
+[node name="promptForCam" type="Sprite2D" parent="DeskTest" unique_id=261758910]
+position = Vector2(165.91608, 305.2604)
+scale = Vector2(0.31137857, 0.31137863)
+texture = ExtResource("9_efwtk")
 
 [node name="bonk" type="Area2D" parent="." unique_id=1334136740]
 process_mode = 3
@@ -151,7 +91,7 @@ z_index = 2
 
 [node name="bonk" type="CollisionShape2D" parent="bonk" unique_id=892750444]
 process_mode = 3
-position = Vector2(297.6875, 404.3125)
+position = Vector2(241, 402)
 shape = SubResource("RectangleShape2D_m0v6u")
 
 [node name="bonk2" type="AudioStreamPlayer2D" parent="bonk" unique_id=292805840]
@@ -163,109 +103,8 @@ z_index = 2
 script = ExtResource("2_t7ome")
 
 [node name="leftRec" type="CollisionShape2D" parent="left" unique_id=207499393]
-position = Vector2(0, 360)
+position = Vector2(-81, 362)
 shape = SubResource("RectangleShape2D_odjk5")
-
-[node name="CameraSystem" type="AnimatedSprite2D" parent="." unique_id=598886846]
-position = Vector2(595.78986, 364.50003)
-scale = Vector2(0.3869427, 0.38694268)
-sprite_frames = SubResource("SpriteFrames_odjk5")
-animation = &"hallway"
-
-[node name="CameraMapUI" type="Control" parent="." unique_id=964066164]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("17_upcfv")
-
-[node name="TextureRect" type="TextureRect" parent="CameraMapUI" unique_id=1977342216]
-layout_mode = 0
-offset_left = 990.0
-offset_top = 430.95016
-offset_right = 1282.1648
-offset_bottom = 723.115
-mouse_filter = 2
-texture = ExtResource("18_upcfv")
-expand_mode = 1
-
-[node name="RoomButtons" type="Control" parent="CameraMapUI" unique_id=1069121213]
-anchors_preset = 0
-offset_left = 549.27
-offset_top = 154.55
-offset_right = 589.27026
-offset_bottom = 186.10506
-scale = Vector2(0.74, 0.74)
-mouse_filter = 2
-
-[node name="bathroom" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=1556833967]
-layout_mode = 0
-offset_left = 655.03375
-offset_top = 612.77014
-offset_right = 684.2914
-offset_bottom = 667.5853
-rotation = -3.5063665
-texture_normal = ExtResource("19_ear21")
-texture_pressed = ExtResource("20_ou6ys")
-
-[node name="hallway" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=1747319051]
-layout_mode = 0
-offset_left = 668.5473
-offset_top = 473.58118
-offset_right = 699.2214
-offset_bottom = 525.66833
-rotation = -0.19896753
-texture_normal = ExtResource("19_ear21")
-texture_pressed = ExtResource("20_ou6ys")
-
-[node name="kitchen" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=500882224]
-layout_mode = 0
-offset_left = 828.0067
-offset_top = 538.4459
-offset_right = 860.4781
-offset_bottom = 582.4459
-rotation = -3.7699113
-texture_normal = ExtResource("19_ear21")
-texture_pressed = ExtResource("20_ou6ys")
-
-[node name="livingroom" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=388919340]
-layout_mode = 0
-offset_left = 860.4392
-offset_top = 687.0946
-offset_right = 891.96594
-offset_bottom = 739.7334
-rotation = -2.7122416
-texture_normal = ExtResource("19_ear21")
-texture_pressed = ExtResource("20_ou6ys")
-
-[node name="room1" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=2011793433]
-layout_mode = 0
-offset_left = 765.8446
-offset_top = 745.2028
-offset_right = 795.11633
-offset_bottom = 800.8798
-rotation = -2.8448868
-texture_normal = ExtResource("19_ear21")
-texture_pressed = ExtResource("20_ou6ys")
-
-[node name="balcony" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=380304269]
-layout_mode = 0
-offset_left = 849.62823
-offset_top = 749.25696
-offset_right = 882.0661
-offset_bottom = 804.61597
-rotation = -1.9198622
-texture_normal = ExtResource("19_ear21")
-texture_pressed = ExtResource("20_ou6ys")
-
-[node name="camSwitch" type="AudioStreamPlayer2D" parent="CameraMapUI" unique_id=1959195586]
-stream = ExtResource("21_ear21")
 
 [connection signal="input_event" from="DeskTest/doorColision" to="DeskTest" method="_on_door_colision_input_event"]
 [connection signal="input_event" from="bonk" to="DeskTest" method="_on_bonk_input_event"]
-[connection signal="pressed" from="CameraMapUI/RoomButtons/bathroom" to="CameraMapUI" method="_on_bathroom_pressed"]
-[connection signal="pressed" from="CameraMapUI/RoomButtons/hallway" to="CameraMapUI" method="_on_hallway_pressed"]
-[connection signal="pressed" from="CameraMapUI/RoomButtons/kitchen" to="CameraMapUI" method="_on_kitchen_pressed"]
-[connection signal="pressed" from="CameraMapUI/RoomButtons/livingroom" to="CameraMapUI" method="_on_livingroom_pressed"]
-[connection signal="pressed" from="CameraMapUI/RoomButtons/room1" to="CameraMapUI" method="_on_room_1_pressed"]
-[connection signal="pressed" from="CameraMapUI/RoomButtons/balcony" to="CameraMapUI" method="_on_balcony_pressed"]

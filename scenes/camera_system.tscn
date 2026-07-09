@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://bvwdwn2p5xihg"]
+
+[ext_resource type="Script" uid="uid://c6ao73yw46wv5" path="res://scripts/camera_system.gd" id="1_7qjgd"]
+[ext_resource type="Texture2D" uid="uid://cbg1j1ydsds8y" path="res://textures/assets/camera/bacony_test.jpg" id="1_gyk7p"]
+[ext_resource type="Texture2D" uid="uid://ke0t8mf4npo8" path="res://textures/assets/camera/bathroom_test.jpg" id="2_7qjgd"]
+[ext_resource type="Texture2D" uid="uid://gcagpeu8o7cp" path="res://textures/assets/camera/hallway_test.jpg" id="3_yvgkr"]
+[ext_resource type="Texture2D" uid="uid://cl7thj66tmt8r" path="res://textures/assets/camera/kitchen_test.jpg" id="4_5ufnm"]
+[ext_resource type="Texture2D" uid="uid://phhkba0wm1pj" path="res://textures/assets/camera/livingroom_test.jpg" id="5_jrxnm"]
+[ext_resource type="Texture2D" uid="uid://c5xkd0jxwmw7j" path="res://textures/assets/camera/room1_test.jpg" id="6_ck7qy"]
+[ext_resource type="Texture2D" uid="uid://cob4us106kmj0" path="res://textures/assets/camera/mapa.png" id="8_daps8"]
+[ext_resource type="Texture2D" uid="uid://ditt3j5djtyya" path="res://textures/assets/camera/camera_notsel.png" id="9_eqof2"]
+[ext_resource type="Texture2D" uid="uid://kvocifajv6qu" path="res://textures/assets/camera/camera_select.png" id="10_au3m6"]
+[ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="11_lugd1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvt2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gyk7p")
+}],
+"loop": 1,
+"name": &"balcony",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7qjgd")
+}],
+"loop": 1,
+"name": &"bathroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yvgkr")
+}],
+"loop": 1,
+"name": &"hallway",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5ufnm")
+}],
+"loop": 1,
+"name": &"kitchen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jrxnm")
+}],
+"loop": 1,
+"name": &"livingroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ck7qy")
+}],
+"loop": 1,
+"name": &"room1",
+"speed": 5.0
+}]
+
+[node name="CameraSystem" type="CanvasLayer" unique_id=1282154074]
+layer = 50
+script = ExtResource("1_7qjgd")
+
+[node name="CameraFeed" type="AnimatedSprite2D" parent="." unique_id=118412356]
+position = Vector2(589.29596, 361.5)
+scale = Vector2(0.82187146, 0.82187146)
+sprite_frames = SubResource("SpriteFrames_yvt2o")
+animation = &"hallway"
+
+[node name="CameraMapUI" type="Control" parent="." unique_id=1139767289]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CameraMap" type="TextureRect" parent="CameraMapUI" unique_id=1617047745]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 430.95016
+offset_right = 1282.1648
+offset_bottom = 723.115
+mouse_filter = 2
+texture = ExtResource("8_daps8")
+expand_mode = 1
+
+[node name="RoomButtons" type="Control" parent="CameraMapUI" unique_id=36333411]
+anchors_preset = 0
+offset_left = 549.27
+offset_top = 154.55
+offset_right = 589.27026
+offset_bottom = 186.10506
+scale = Vector2(0.74, 0.74)
+mouse_filter = 2
+
+[node name="bathroom" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=215452499]
+layout_mode = 0
+offset_left = 655.03375
+offset_top = 612.77014
+offset_right = 684.2914
+offset_bottom = 667.5853
+rotation = -3.5063665
+texture_normal = ExtResource("9_eqof2")
+texture_pressed = ExtResource("10_au3m6")
+
+[node name="hallway" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=461180500]
+layout_mode = 0
+offset_left = 668.5473
+offset_top = 473.58118
+offset_right = 699.2214
+offset_bottom = 525.66833
+rotation = -0.19896753
+texture_normal = ExtResource("9_eqof2")
+texture_pressed = ExtResource("10_au3m6")
+
+[node name="kitchen" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=531437054]
+layout_mode = 0
+offset_left = 828.0067
+offset_top = 538.4459
+offset_right = 860.4781
+offset_bottom = 582.4459
+rotation = -3.7699113
+texture_normal = ExtResource("9_eqof2")
+texture_pressed = ExtResource("10_au3m6")
+
+[node name="livingroom" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=1082244122]
+layout_mode = 0
+offset_left = 860.4392
+offset_top = 687.0946
+offset_right = 891.96594
+offset_bottom = 739.7334
+rotation = -2.7122416
+texture_normal = ExtResource("9_eqof2")
+texture_pressed = ExtResource("10_au3m6")
+
+[node name="room1" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=1828953233]
+layout_mode = 0
+offset_left = 765.8446
+offset_top = 745.2028
+offset_right = 795.11633
+offset_bottom = 800.8798
+rotation = -2.8448868
+texture_normal = ExtResource("9_eqof2")
+texture_pressed = ExtResource("10_au3m6")
+
+[node name="balcony" type="TextureButton" parent="CameraMapUI/RoomButtons" unique_id=758728946]
+layout_mode = 0
+offset_left = 849.62823
+offset_top = 749.25696
+offset_right = 882.0661
+offset_bottom = 804.61597
+rotation = -1.9198622
+texture_normal = ExtResource("9_eqof2")
+texture_pressed = ExtResource("10_au3m6")
+
+[node name="camSwitch" type="AudioStreamPlayer2D" parent="CameraMapUI" unique_id=1366637768]
+stream = ExtResource("11_lugd1")
+
+[connection signal="pressed" from="CameraMapUI/RoomButtons/bathroom" to="." method="_on_bathroom_pressed"]
+[connection signal="pressed" from="CameraMapUI/RoomButtons/hallway" to="." method="_on_hallway_pressed"]
+[connection signal="pressed" from="CameraMapUI/RoomButtons/kitchen" to="." method="_on_kitchen_pressed"]
+[connection signal="pressed" from="CameraMapUI/RoomButtons/livingroom" to="." method="_on_livingroom_pressed"]
+[connection signal="pressed" from="CameraMapUI/RoomButtons/room1" to="." method="_on_room_1_pressed"]
+[connection signal="pressed" from="CameraMapUI/RoomButtons/balcony" to="." method="_on_balcony_pressed"]

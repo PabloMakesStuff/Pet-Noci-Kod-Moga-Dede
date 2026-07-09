@@ -56,3 +56,4 @@ CameraFlip={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.54371256, 0.056886107, 0.30770245, 1)
