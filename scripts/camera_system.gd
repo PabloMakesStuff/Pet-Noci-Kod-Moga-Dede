@@ -5,7 +5,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	visible = false
-
+	$"CameraMapUI/divided static".frame = 11
 func _on_bathroom_pressed() -> void:
 	show_camera('bathroom')
 
@@ -26,5 +26,6 @@ func _on_balcony_pressed() -> void:
 
 func show_camera(animation_name: String) -> void:
 	$CameraMapUI/camSwitch.play()
+	$"CameraMapUI/divided static".play("default")
 	camera_feed.play(animation_name)
 	camera_feed.visible = true

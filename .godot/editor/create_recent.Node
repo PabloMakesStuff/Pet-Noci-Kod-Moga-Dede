@@ -1,0 +1,14 @@
+CollisionShape2D
+Area2D
+Button
+CheckButton
+AnimatedSprite2D
+CanvasLayer
+Sprite2D
+AudioStreamPlayer2D
+AnimationPlayer
+TextureButton
+Control
+TextureRect
+ColorRect
+AnimationTree

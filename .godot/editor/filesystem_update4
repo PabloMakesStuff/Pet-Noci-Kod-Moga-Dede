@@ -1,0 +1,12 @@
+res://scenes/door_scene.tscn
+res://shaders/shaderstatic.gdshader
+res://scenes/camera_system.tscn
+res://shaders/removeblack.gdshader
+res://scripts/camera_system.gd
+res://scripts/noor.gd
+res://scenes/main_office.tscn
+res://scripts/door_colision.gd
+res://scripts/office_room.gd
+res://scripts/pan_view.gd
+res://global.gd
+res://scenes/camera_pan.gd

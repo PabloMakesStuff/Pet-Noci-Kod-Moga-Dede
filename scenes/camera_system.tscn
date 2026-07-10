@@ -7,10 +7,33 @@
 [ext_resource type="Texture2D" uid="uid://cl7thj66tmt8r" path="res://textures/assets/camera/kitchen_test.jpg" id="4_5ufnm"]
 [ext_resource type="Texture2D" uid="uid://phhkba0wm1pj" path="res://textures/assets/camera/livingroom_test.jpg" id="5_jrxnm"]
 [ext_resource type="Texture2D" uid="uid://c5xkd0jxwmw7j" path="res://textures/assets/camera/room1_test.jpg" id="6_ck7qy"]
+[ext_resource type="Shader" uid="uid://dbys0pcvs52sh" path="res://shaders/shaderstatic.gdshader" id="8_7qjgd"]
+[ext_resource type="Script" uid="uid://duyncsdj0f8em" path="res://scenes/camera_pan.gd" id="8_csjpi"]
 [ext_resource type="Texture2D" uid="uid://cob4us106kmj0" path="res://textures/assets/camera/mapa.png" id="8_daps8"]
+[ext_resource type="Texture2D" uid="uid://ce1y3xtumjdt3" path="res://textures/static/8.png" id="8_nepne"]
+[ext_resource type="Texture2D" uid="uid://jv680gjcbm3x" path="res://textures/static/10.png" id="9_dujr4"]
 [ext_resource type="Texture2D" uid="uid://ditt3j5djtyya" path="res://textures/assets/camera/camera_notsel.png" id="9_eqof2"]
 [ext_resource type="Texture2D" uid="uid://kvocifajv6qu" path="res://textures/assets/camera/camera_select.png" id="10_au3m6"]
+[ext_resource type="Texture2D" uid="uid://dcbsnl02po4u3" path="res://textures/static/21.png" id="10_csjpi"]
+[ext_resource type="Texture2D" uid="uid://cfgysaoqgpuqq" path="res://textures/static/12.png" id="10_lugd1"]
+[ext_resource type="Texture2D" uid="uid://d04h0txkr5kcv" path="res://textures/static/22.png" id="11_45rcb"]
 [ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="11_lugd1"]
+[ext_resource type="Texture2D" uid="uid://wjrabfrrtvj1" path="res://textures/static/13.png" id="11_yvt2o"]
+[ext_resource type="Texture2D" uid="uid://b3iwtm4qo0sgl" path="res://textures/static/430.png" id="12_6kid5"]
+[ext_resource type="Texture2D" uid="uid://dyxs4e032k2dw" path="res://textures/static/14.png" id="12_kj2ym"]
+[ext_resource type="Texture2D" uid="uid://c6kpb24bp2i8x" path="res://textures/static/434.png" id="13_ot0b3"]
+[ext_resource type="Texture2D" uid="uid://dxqj7ccrkfci1" path="res://textures/static/15.png" id="13_p346j"]
+[ext_resource type="Texture2D" uid="uid://ci4kg2jyh015o" path="res://textures/static/435.png" id="14_kxjl1"]
+[ext_resource type="Texture2D" uid="uid://bqest4r8f2vjo" path="res://textures/static/16.png" id="14_q65mb"]
+[ext_resource type="Texture2D" uid="uid://0i43rvagp7cy" path="res://textures/static/17.png" id="15_321s0"]
+[ext_resource type="Texture2D" uid="uid://bdnelwxkv7eb1" path="res://textures/static/436.png" id="15_h4r4a"]
+[ext_resource type="Texture2D" uid="uid://bwrlfqxcs107w" path="res://textures/static/18.png" id="16_6mt7f"]
+[ext_resource type="Texture2D" uid="uid://c7utdpsotkkb" path="res://textures/static/437.png" id="16_j5by0"]
+[ext_resource type="Texture2D" uid="uid://u76r1lutohs7" path="res://textures/static/20.png" id="17_ctgyo"]
+[ext_resource type="Texture2D" uid="uid://c648v5u724cy4" path="res://textures/static/438.png" id="17_v4vip"]
+[ext_resource type="Texture2D" uid="uid://dbg6bp4y13s15" path="res://textures/static/439.png" id="18_or6yr"]
+[ext_resource type="Script" uid="uid://b5xay8ujkf7eg" path="res://scripts/divided_static.gd" id="19_3ahn5"]
+[ext_resource type="Texture2D" uid="uid://l0wyhya63lju" path="res://textures/static/500.png" id="19_dujr4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yvt2o"]
 animations = [{
@@ -63,6 +86,116 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
+size = Vector2(502.46484, 882.5702)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0v6u"]
+size = Vector2(217.14023, 598.4625)
+
+[sub_resource type="Shader" id="Shader_skm0l"]
+code = "shader_type canvas_item;
+
+uniform float threshold = 0.1;
+uniform float alpha = 1.0;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV); 
+	
+	if(color.r < threshold && color.g < threshold && color.b < threshold){
+		color.a = 0.0;
+	} else {
+		color.a = alpha;
+	}
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wj1ut"]
+shader = SubResource("Shader_skm0l")
+shader_parameter/threshold = -0.5
+shader_parameter/alpha = 0.2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18c2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nepne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dujr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_csjpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_45rcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6kid5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ot0b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kxjl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h4r4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_j5by0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_v4vip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_or6yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dujr4")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dulfx"]
+shader = ExtResource("8_7qjgd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdlxk"]
+shader = ExtResource("8_7qjgd")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nijh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_lugd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yvt2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kj2ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p346j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_q65mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_321s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6mt7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ctgyo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
+
 [node name="CameraSystem" type="CanvasLayer" unique_id=1282154074]
 layer = 50
 script = ExtResource("1_7qjgd")
@@ -71,15 +204,52 @@ script = ExtResource("1_7qjgd")
 position = Vector2(589.29596, 361.5)
 scale = Vector2(0.82187146, 0.82187146)
 sprite_frames = SubResource("SpriteFrames_yvt2o")
-animation = &"hallway"
+animation = &"balcony"
+
+[node name="left" type="Area2D" parent="CameraFeed" unique_id=1007364553]
+script = ExtResource("8_csjpi")
+
+[node name="leftBox" type="CollisionShape2D" parent="CameraFeed/left" unique_id=264325546]
+z_index = 10
+position = Vector2(-712.7353, 0.9981079)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_odjk5")
+debug_color = Color(0.8288838, 0.3199195, 0.59971315, 0.41960785)
+
+[node name="right" type="Area2D" parent="CameraFeed" unique_id=339977568]
+
+[node name="rightBox" type="CollisionShape2D" parent="CameraFeed/right" unique_id=422335553]
+position = Vector2(849.2019, -146.53107)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_m0v6u")
 
 [node name="CameraMapUI" type="Control" parent="." unique_id=1139767289]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -3.0517578e-05
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 39.99997
+
+[node name="divided static" type="AnimatedSprite2D" parent="CameraMapUI" unique_id=348742613]
+z_index = 9
+material = SubResource("ShaderMaterial_wj1ut")
+position = Vector2(0, 5)
+sprite_frames = SubResource("SpriteFrames_18c2x")
+frame = 11
+frame_progress = 1.0
+centered = false
+script = ExtResource("19_3ahn5")
+metadata/_edit_lock_ = true
+
+[node name="rest" type="Timer" parent="CameraMapUI/divided static" unique_id=1506506011]
+one_shot = true
+
+[node name="twitch" type="Timer" parent="CameraMapUI/divided static" unique_id=354083877]
+one_shot = true
 
 [node name="CameraMap" type="TextureRect" parent="CameraMapUI" unique_id=1617047745]
+z_index = 9
+material = SubResource("ShaderMaterial_dulfx")
 layout_mode = 0
 offset_left = 990.0
 offset_top = 430.95016
@@ -88,6 +258,15 @@ offset_bottom = 723.115
 mouse_filter = 2
 texture = ExtResource("8_daps8")
 expand_mode = 1
+
+[node name="static" type="AnimatedSprite2D" parent="CameraMapUI" unique_id=1595827438]
+modulate = Color(1, 1, 1, 0.39215687)
+material = SubResource("ShaderMaterial_qdlxk")
+position = Vector2(-3, 5)
+sprite_frames = SubResource("SpriteFrames_nijh7")
+autoplay = "default"
+centered = false
+metadata/_edit_lock_ = true
 
 [node name="RoomButtons" type="Control" parent="CameraMapUI" unique_id=36333411]
 anchors_preset = 0
