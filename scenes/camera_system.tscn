@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://phhkba0wm1pj" path="res://textures/assets/camera/livingroom_test.jpg" id="5_jrxnm"]
 [ext_resource type="Texture2D" uid="uid://c5xkd0jxwmw7j" path="res://textures/assets/camera/room1_test.jpg" id="6_ck7qy"]
 [ext_resource type="Shader" uid="uid://dbys0pcvs52sh" path="res://shaders/shaderstatic.gdshader" id="8_7qjgd"]
-[ext_resource type="Script" uid="uid://duyncsdj0f8em" path="res://scenes/camera_pan.gd" id="8_csjpi"]
+[ext_resource type="Texture2D" uid="uid://bxvrgapci3jhw" path="res://icon.svg" id="8_csjpi"]
 [ext_resource type="Texture2D" uid="uid://cob4us106kmj0" path="res://textures/assets/camera/mapa.png" id="8_daps8"]
 [ext_resource type="Texture2D" uid="uid://ce1y3xtumjdt3" path="res://textures/static/8.png" id="8_nepne"]
 [ext_resource type="Texture2D" uid="uid://jv680gjcbm3x" path="res://textures/static/10.png" id="9_dujr4"]
@@ -85,12 +85,6 @@ animations = [{
 "name": &"room1",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
-size = Vector2(502.46484, 882.5702)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0v6u"]
-size = Vector2(217.14023, 598.4625)
 
 [sub_resource type="Shader" id="Shader_skm0l"]
 code = "shader_type canvas_item;
@@ -196,39 +190,41 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
+size = Vector2(293, 761)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0v6u"]
+size = Vector2(218, 332.5)
+
 [node name="CameraSystem" type="CanvasLayer" unique_id=1282154074]
 layer = 50
 script = ExtResource("1_7qjgd")
 
 [node name="CameraFeed" type="AnimatedSprite2D" parent="." unique_id=118412356]
-position = Vector2(589.29596, 361.5)
+position = Vector2(-175, -3.5762787e-07)
 scale = Vector2(0.82187146, 0.82187146)
 sprite_frames = SubResource("SpriteFrames_yvt2o")
 animation = &"balcony"
+centered = false
 
-[node name="left" type="Area2D" parent="CameraFeed" unique_id=1007364553]
-script = ExtResource("8_csjpi")
-
-[node name="leftBox" type="CollisionShape2D" parent="CameraFeed/left" unique_id=264325546]
-z_index = 10
-position = Vector2(-712.7353, 0.9981079)
-scale = Vector2(1.0000002, 1.0000002)
-shape = SubResource("RectangleShape2D_odjk5")
-debug_color = Color(0.8288838, 0.3199195, 0.59971315, 0.41960785)
-
-[node name="right" type="Area2D" parent="CameraFeed" unique_id=339977568]
-
-[node name="rightBox" type="CollisionShape2D" parent="CameraFeed/right" unique_id=422335553]
-position = Vector2(849.2019, -146.53107)
-scale = Vector2(1.0000002, 1.0000002)
-shape = SubResource("RectangleShape2D_m0v6u")
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1093444812]
+z_index = 3
+offset_left = 1153.0
+offset_top = 14.0
+offset_right = 1281.0
+offset_bottom = 142.0
+texture_normal = ExtResource("8_csjpi")
 
 [node name="CameraMapUI" type="Control" parent="." unique_id=1139767289]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_top = -3.0517578e-05
-offset_right = 40.0
-offset_bottom = 39.99997
+offset_right = -1240.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="divided static" type="AnimatedSprite2D" parent="CameraMapUI" unique_id=348742613]
 z_index = 9
@@ -248,13 +244,17 @@ one_shot = true
 one_shot = true
 
 [node name="CameraMap" type="TextureRect" parent="CameraMapUI" unique_id=1617047745]
-z_index = 9
 material = SubResource("ShaderMaterial_dulfx")
-layout_mode = 0
-offset_left = 990.0
-offset_top = 430.95016
-offset_right = 1282.1648
-offset_bottom = 723.115
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 24.750002
+anchor_top = 10.774
+anchor_right = 32.054
+anchor_bottom = 18.078001
+offset_left = -6.1035156e-05
+offset_top = -0.0101623535
+offset_right = 0.004760742
+offset_bottom = -0.0056152344
 mouse_filter = 2
 texture = ExtResource("8_daps8")
 expand_mode = 1
@@ -267,6 +267,9 @@ sprite_frames = SubResource("SpriteFrames_nijh7")
 autoplay = "default"
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="camSwitch" type="AudioStreamPlayer2D" parent="CameraMapUI" unique_id=1366637768]
+stream = ExtResource("11_lugd1")
 
 [node name="RoomButtons" type="Control" parent="CameraMapUI" unique_id=36333411]
 anchors_preset = 0
@@ -337,12 +340,26 @@ rotation = -1.9198622
 texture_normal = ExtResource("9_eqof2")
 texture_pressed = ExtResource("10_au3m6")
 
-[node name="camSwitch" type="AudioStreamPlayer2D" parent="CameraMapUI" unique_id=1366637768]
-stream = ExtResource("11_lugd1")
+[node name="left" type="Area2D" parent="." unique_id=1333340183]
 
+[node name="leftBox" type="CollisionShape2D" parent="left" unique_id=1320217047]
+position = Vector2(-3.5, 367)
+shape = SubResource("RectangleShape2D_odjk5")
+
+[node name="right" type="Area2D" parent="." unique_id=322911612]
+
+[node name="rightBox" type="CollisionShape2D" parent="right" unique_id=918617594]
+position = Vector2(1268, 297)
+shape = SubResource("RectangleShape2D_m0v6u")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/bathroom" to="." method="_on_bathroom_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/hallway" to="." method="_on_hallway_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/kitchen" to="." method="_on_kitchen_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/livingroom" to="." method="_on_livingroom_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/room1" to="." method="_on_room_1_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/balcony" to="." method="_on_balcony_pressed"]
+[connection signal="mouse_entered" from="left" to="." method="_on_left_mouse_entered"]
+[connection signal="mouse_exited" from="left" to="." method="_on_left_mouse_exited"]
+[connection signal="mouse_entered" from="right" to="." method="_on_right_mouse_entered"]
+[connection signal="mouse_exited" from="right" to="." method="_on_right_mouse_exited"]

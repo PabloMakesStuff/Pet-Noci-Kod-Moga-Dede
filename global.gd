@@ -1,7 +1,10 @@
 extends Node
 
+var aleksaPosition : int = 0
+var djolePosition : int = 0
+var markoPosition : int = 0
+
 var isDoorClosed : bool = true
-var camera_pan : float = 0.0
 var office_pan : float = 0.0
 @export var isOnDoorSprite: bool
 var camera_active: bool = false

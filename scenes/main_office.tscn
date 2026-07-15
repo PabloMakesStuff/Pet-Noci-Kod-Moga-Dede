@@ -18,7 +18,7 @@ size = Vector2(544.14746, 913.0581)
 size = Vector2(62.625, 67.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
-size = Vector2(333.5, 750)
+size = Vector2(333.5, 724)
 
 [node name="main_office" type="Node2D" unique_id=1747683782]
 script = ExtResource("1_1hc3g")
@@ -103,7 +103,7 @@ z_index = 2
 script = ExtResource("2_t7ome")
 
 [node name="leftRec" type="CollisionShape2D" parent="left" unique_id=207499393]
-position = Vector2(-81, 362)
+position = Vector2(-81, 364)
 shape = SubResource("RectangleShape2D_odjk5")
 
 [connection signal="input_event" from="DeskTest/doorColision" to="DeskTest" method="_on_door_colision_input_event"]
