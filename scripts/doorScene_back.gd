@@ -13,6 +13,5 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_pressed('guiClick'):
-		# kada se prebaci scena office_pan ostaje 300
 		Global.office_pan = 0.0
-		Transition.fade_to_scene("res://scenes/main_office.tscn")
+		owner.visible = false

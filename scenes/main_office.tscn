@@ -10,6 +10,8 @@
 [ext_resource type="FontFile" uid="uid://bj6p0ggute0ox" path="res://fonts/ShareTech-UI.ttf" id="7_re7b1"]
 [ext_resource type="AudioStream" uid="uid://crpdhfks07ooa" path="res://audio/PartyFavorraspyPart_AC01__3.wav" id="9_1hc3g"]
 [ext_resource type="Texture2D" uid="uid://dfcfi5g0a2a4x" path="res://textures/assets/office/prompt_test.png" id="9_efwtk"]
+[ext_resource type="Script" uid="uid://cqyjt61oxsaab" path="res://scripts/markoAI.gd" id="11_c87i2"]
+[ext_resource type="Script" uid="uid://cwo2j8fs0mg60" path="res://scripts/djoleAI.gd" id="12_ot4no"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlsm3"]
 size = Vector2(544.14746, 913.0581)
@@ -18,7 +20,7 @@ size = Vector2(544.14746, 913.0581)
 size = Vector2(62.625, 67.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjk5"]
-size = Vector2(333.5, 724)
+size = Vector2(387.75, 724)
 
 [node name="main_office" type="Node2D" unique_id=1747683782]
 script = ExtResource("1_1hc3g")
@@ -103,8 +105,24 @@ z_index = 2
 script = ExtResource("2_t7ome")
 
 [node name="leftRec" type="CollisionShape2D" parent="left" unique_id=207499393]
-position = Vector2(-81, 364)
+position = Vector2(-53.875, 364)
 shape = SubResource("RectangleShape2D_odjk5")
+
+[node name="marko AI" type="Node2D" parent="." unique_id=421223609]
+process_mode = 3
+script = ExtResource("11_c87i2")
+
+[node name="Timer" type="Timer" parent="marko AI" unique_id=666916574]
+wait_time = 4.0
+autostart = true
+
+[node name="djole AI" type="Node2D" parent="." unique_id=118297619]
+process_mode = 3
+script = ExtResource("12_ot4no")
+
+[node name="Timer" type="Timer" parent="djole AI" unique_id=1021985894]
+wait_time = 4.5
+autostart = true
 
 [connection signal="input_event" from="DeskTest/doorColision" to="DeskTest" method="_on_door_colision_input_event"]
 [connection signal="input_event" from="bonk" to="DeskTest" method="_on_bonk_input_event"]

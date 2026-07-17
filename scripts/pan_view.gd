@@ -7,8 +7,8 @@ func _ready() -> void:
 
 func mouseEntered() -> void:
 	Global.office_pan += 300.0
-	print("pan is now: ", Global.office_pan)
+	#print("pan is now: ", Global.office_pan)
 	
 func mouseExited() -> void:
 	Global.office_pan -= 300.0
-	print("pan is now: ", Global.office_pan)
+	#print("pan is now: ", Global.office_pan)

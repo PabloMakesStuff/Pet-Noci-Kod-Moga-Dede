@@ -5,6 +5,8 @@ var base_x: float
 @export var max_pan: float = 200.0
 @onready var doorSprite = $doorColision/doorSprite
 @export var warning_threshold: float = 100.0
+const DOOR_SCENE: PackedScene = preload("res://scenes/door_scene.tscn")
+var door_instance: Node2D = null
 
 func _ready() -> void:
 	base_x = position.x
@@ -23,8 +25,12 @@ func _on_bonk_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 		$"../bonk/bonk2".play()
 
 func _on_door_colision_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Global.camera_active == true:
-		visible = false
 	if event.is_action_pressed('guiClick'):
-		#get_tree().change_scene_to_file("res://scenes/door_scene.tscn")
-		Transition.fade_to_scene("res://scenes/door_scene.tscn")
+		_open_door()
+
+func _open_door() -> void:
+	if door_instance == null:
+		door_instance = DOOR_SCENE.instantiate()
+		door_instance.z_index = 100
+		get_tree().current_scene.add_child(door_instance)
+	door_instance.visible = true

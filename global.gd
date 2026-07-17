@@ -1,9 +1,12 @@
 extends Node
 
-var aleksaPosition : int = 0
-var djolePosition : int = 0
-var markoPosition : int = 0
+var AI = {'marko':20,'aleksa':0,'djole':20}
 
+var aleksaPosition : String = 'toilet_1' #nema nikakvu vrednost
+var djolePosition : String = 'livingroom_1'
+var markoPosition : String = 'livingroom_1'
+
+var currentCamera : String = ''
 var isDoorClosed : bool = true
 var office_pan : float = 0.0
 @export var isOnDoorSprite: bool
