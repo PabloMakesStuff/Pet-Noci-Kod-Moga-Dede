@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://n07ixjct27yd" path="res://scripts/doorScene_back.gd" id="2_d4rin"]
 [ext_resource type="Texture2D" uid="uid://hqr3tr7xqpxu" path="res://textures/assets/office/Rectangle 191.png" id="3_0y7gj"]
 [ext_resource type="Script" uid="uid://clgngfxu2u32p" path="res://scripts/noor.gd" id="3_dulfx"]
+[ext_resource type="Script" uid="uid://cwgrb13qw2l5x" path="res://scripts/testlabel.gd" id="6_akmdg"]
+[ext_resource type="Texture2D" uid="uid://bxvrgapci3jhw" path="res://icon.svg" id="7_6nshc"]
+[ext_resource type="Script" uid="uid://c2o03u5adurfs" path="res://scripts/marko_odlazi.gd" id="8_lqp4w"]
+[ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="9_34cei"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_odjk5"]
 animations = [{
@@ -26,19 +30,18 @@ size = Vector2(241, 504)
 [node name="doorScene" type="Node2D" unique_id=1093270844]
 
 [node name="noor" type="AnimatedSprite2D" parent="." unique_id=1860319245]
-position = Vector2(-164, 2.999878)
+position = Vector2(-164, 0)
 scale = Vector2(0.80721533, 0.80721533)
 sprite_frames = SubResource("SpriteFrames_odjk5")
 animation = &"noor_empty"
 frame = 1
-frame_progress = 0.09376446
 centered = false
 script = ExtResource("3_dulfx")
 
 [node name="Button" type="Button" parent="noor" unique_id=1907550143]
 offset_left = 810.19275
 offset_top = 408.81302
-offset_right = 1185.5573
+offset_right = 1153.3478
 offset_bottom = 613.2196
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1704012298]
@@ -54,7 +57,28 @@ position = Vector2(1225.5, 356)
 shape = SubResource("RectangleShape2D_odjk5")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="Label" type="Label" parent="." unique_id=1831034392]
+offset_left = 386.0
+offset_top = 100.0
+offset_right = 651.3043
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 32
+text = "Na vratima je: "
+script = ExtResource("6_akmdg")
+
+[node name="MarkoOdlazi" type="TextureButton" parent="." unique_id=43408039]
+offset_left = 871.0
+offset_top = 548.0
+offset_right = 999.0
+offset_bottom = 676.0
+texture_normal = ExtResource("7_6nshc")
+script = ExtResource("8_lqp4w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarkoOdlazi" unique_id=433209598]
+stream = ExtResource("9_34cei")
+
 [connection signal="pressed" from="noor/Button" to="noor" method="_on_button_pressed"]
 [connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
+[connection signal="pressed" from="MarkoOdlazi" to="MarkoOdlazi" method="_on_pressed"]

@@ -13,5 +13,6 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_pressed('guiClick'):
+		Global.DoorSceneOpened = false
 		Global.office_pan = 0.0
 		owner.visible = false

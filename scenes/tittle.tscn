@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://lgyuj10l767e"]
 
-[ext_resource type="Texture2D" uid="uid://ejbqpv20o18d" path="res://textures/freddy titch/431.png" id="1_nrgad"]
-[ext_resource type="Texture2D" uid="uid://bihabw0eldsp5" path="res://textures/freddy titch/440.png" id="2_cekq1"]
-[ext_resource type="Texture2D" uid="uid://jujhtwt3yqwe" path="res://textures/freddy titch/441.png" id="3_r57hc"]
-[ext_resource type="Texture2D" uid="uid://cferd7md2oy11" path="res://textures/freddy titch/442.png" id="4_dldj3"]
+[ext_resource type="Texture2D" uid="uid://c0wi0ibb1xef7" path="res://textures/title twitch/m1.jpg" id="1_2t4ok"]
+[ext_resource type="Texture2D" uid="uid://dbqha0ff3iwmn" path="res://textures/title twitch/m2.jpg" id="2_25gw8"]
+[ext_resource type="Texture2D" uid="uid://hfgbvtxss17t" path="res://textures/title twitch/m3.jpg" id="3_as84k"]
+[ext_resource type="Texture2D" uid="uid://dqqt1lb1on4dd" path="res://textures/title twitch/m4.jpg" id="4_jqunf"]
+[ext_resource type="Texture2D" uid="uid://bfu7h7nfbax4f" path="res://textures/title twitch/d1.jpg" id="5_as84k"]
 [ext_resource type="Script" uid="uid://vd14rou6f12k" path="res://scripts/freddy.gd" id="5_cekq1"]
 [ext_resource type="Shader" uid="uid://dbys0pcvs52sh" path="res://shaders/shaderstatic.gdshader" id="6_2t4ok"]
+[ext_resource type="Texture2D" uid="uid://co5pkjktgm7cd" path="res://textures/title twitch/d2.jpg" id="6_jqunf"]
 [ext_resource type="Texture2D" uid="uid://cfgysaoqgpuqq" path="res://textures/static/12.png" id="7_25gw8"]
 [ext_resource type="Texture2D" uid="uid://wjrabfrrtvj1" path="res://textures/static/13.png" id="8_as84k"]
 [ext_resource type="Texture2D" uid="uid://dyxs4e032k2dw" path="res://textures/static/14.png" id="9_jqunf"]
@@ -35,16 +37,22 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_nrgad")
+"texture": ExtResource("6_jqunf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_cekq1")
+"texture": ExtResource("1_2t4ok")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_r57hc")
+"texture": ExtResource("2_25gw8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_dldj3")
+"texture": ExtResource("3_as84k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jqunf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_as84k")
 }],
 "loop": 1,
 "name": &"default",
@@ -237,20 +245,20 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Freddy" type="AnimatedSprite2D" parent="." unique_id=1818437710]
+[node name="MarkoPeder" type="AnimatedSprite2D" parent="." unique_id=1818437710]
 position = Vector2(3.000061, 7)
 scale = Vector2(0.99861115, 0.99861115)
 sprite_frames = SubResource("SpriteFrames_bvtym")
 centered = false
 script = ExtResource("5_cekq1")
 
-[node name="rest" type="Timer" parent="Freddy" unique_id=1158587169]
+[node name="rest" type="Timer" parent="MarkoPeder" unique_id=1158587169]
 one_shot = true
 
-[node name="twitch" type="Timer" parent="Freddy" unique_id=1034280178]
+[node name="twitch" type="Timer" parent="MarkoPeder" unique_id=1034280178]
 one_shot = true
 
-[node name="fade" type="Timer" parent="Freddy" unique_id=713377942]
+[node name="fade" type="Timer" parent="MarkoPeder" unique_id=713377942]
 wait_time = 0.3
 autostart = true
 

@@ -7,8 +7,8 @@ var camera_loading := false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("CameraFlip"):
-		if camera_loading:
-			return
+		if camera_loading: return
+		if Global.DoorSceneOpened: return
 		camera_loading = true
 		_toggle_camera_action()
 		camera_loading = false

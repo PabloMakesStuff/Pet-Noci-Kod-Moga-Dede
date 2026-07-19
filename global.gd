@@ -1,6 +1,8 @@
 extends Node
 
 var AI = {'marko':20,'aleksa':0,'djole':20}
+var markoRepelPressed : bool = false
+var DoorSceneOpened := false
 
 var aleksaPosition : String = 'toilet_1' #nema nikakvu vrednost za sada
 var djolePosition : String = 'livingroom_1'

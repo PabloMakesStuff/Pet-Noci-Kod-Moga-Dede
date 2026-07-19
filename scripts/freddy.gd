@@ -8,7 +8,7 @@ func _ready() -> void:
 	restStart()
 
 func restTimeout() -> void:
-	frame = randi_range(1,3)
+	frame = randi_range(0,5)
 	twitchStart()
 
 func twitchTimeout() -> void:

@@ -26,6 +26,7 @@ func _on_bonk_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 
 func _on_door_colision_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed('guiClick'):
+		Global.DoorSceneOpened = true
 		_open_door()
 
 func _open_door() -> void:

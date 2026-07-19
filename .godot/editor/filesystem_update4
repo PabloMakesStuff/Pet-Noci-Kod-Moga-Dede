@@ -1,2 +1,15 @@
 res://scenes/main_office.tscn
 res://shaders/shaderstatic.gdshader
+res://scripts/markoAI.gd
+res://scenes/tittle.tscn
+res://scripts/freddy.gd
+res://scenes/door_scene.tscn
+res://global.gd
+res://scripts/testlabel.gd
+res://scripts/djoleAI.gd
+res://scripts/marko_odlazi.gd
+res://scripts/doorScene_back.gd
+res://scripts/main_office.gd
+res://scenes/camera_system.tscn
+res://scripts/noor.gd
+res://scripts/office_room.gd

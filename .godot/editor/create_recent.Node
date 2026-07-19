@@ -1,3 +1,6 @@
+AudioStreamPlayer2D
+TextureButton
+Label
 Timer
 Node2D
 ColorRect
@@ -7,9 +10,6 @@ CollisionShape2D
 Area2D
 TextureRect
 ScrollContainer
-TextureButton
 Sprite2D
 Button
 CheckButton
-AnimatedSprite2D
-AudioStreamPlayer2D

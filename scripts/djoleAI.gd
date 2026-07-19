@@ -18,10 +18,11 @@ func move() -> void:
 		'livingroom_2':
 			Global.djolePosition = 'livingroom_3'
 		'livingroom_3':
-			Global.djolePosition = 'hallway'
+			if Global.markoPosition == 'hallway':
+				Global.djolePosition = 'livingroom_3'
+			else:
+				Global.djolePosition = 'hallway'
 		'hallway':
 			if Global.isDoorClosed == true:
 				Global.djolePosition = 'livingroom_2'
-			else:
-				Global.djolePosition = 'office'
-	print(Global.djolePosition)
+	print('djole: ',Global.djolePosition)
