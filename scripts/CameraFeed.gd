@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+const LIVINGROOM_SPOTS := ['livingroom_1', 'livingroom_2', 'livingroom_3']
+
 func _process(delta: float) -> void:
 	updatecamera()
 
@@ -17,8 +19,8 @@ func updatecamera() -> void:
 				play("livingroom_M1D2")
 			if Global.djolePosition == 'livingroom_2' and Global.markoPosition == 'livingroom_2':
 				play("livingroom_M2D2")
-			if Global.djolePosition == 'livingroom_3' and Global.markoPosition == 'livingroom_3':
-				play("livingroom_M3D3")
+			if Global.djolePosition == 'livingroom_2' and Global.markoPosition == 'livingroom_3':
+				play("livingroom_M3D2")
 
 			if Global.djolePosition == 'livingroom_3' and Global.markoPosition == 'livingroom_1':
 				play("livingroom_M1D3")
@@ -26,14 +28,32 @@ func updatecamera() -> void:
 				play("livingroom_M2D3")
 			if Global.djolePosition == 'livingroom_3' and Global.markoPosition == 'livingroom_3':
 				play("livingroom_M3D3")
+			
+			if not (Global.markoPosition in LIVINGROOM_SPOTS):
+				if Global.djolePosition == 'livingroom_1':
+					play('livingroom_D1')
+				elif Global.djolePosition == 'livingroom_2':
+					play('livingroom_D2')
+				elif Global.djolePosition == 'livingroom_3':
+					play('livingroom_D3')
 				
-			if Global.djolePosition == 'hallway' and Global.markoPosition == 'room1' or Global.markoPosition == 'hallway':
+			if not (Global.djolePosition in LIVINGROOM_SPOTS):
+				if Global.markoPosition == 'livingroom_1':
+					play('livingroom_M1')
+				elif Global.markoPosition == 'livingroom_2':
+					play('livingroom_M2')
+				elif Global.markoPosition == 'livingroom_3':
+					play('livingroom_M3')
+				
+			if not (Global.markoPosition in LIVINGROOM_SPOTS) and not (Global.djolePosition in LIVINGROOM_SPOTS):
 				play("livingroom")
-
 		'kitchen':
 			play('kitchen')
 		'balcony':
-			play("balcony")
+			if Global.markoPosition == 'balcony':
+				play('balcony_marko')
+			if Global.markoPosition != 'balcony':
+				play("balcony")
 		'bathroom':
 			play('bathroom')
 		'room1':

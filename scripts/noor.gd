@@ -13,11 +13,11 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	if Global.isDoorClosed == false:
-		print(Global.isDoorClosed)
 		$".".frame = 1
 		Global.isDoorClosed = true
+		print(Global.isDoorClosed)
 
 	else:
-		print(Global.isDoorClosed)
 		$".".frame = 0
 		Global.isDoorClosed = false
+		print(Global.isDoorClosed)

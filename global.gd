@@ -2,12 +2,12 @@ extends Node
 
 var AI = {'marko':20,'aleksa':0,'djole':20}
 
-var aleksaPosition : String = 'toilet_1' #nema nikakvu vrednost
+var aleksaPosition : String = 'toilet_1' #nema nikakvu vrednost za sada
 var djolePosition : String = 'livingroom_1'
 var markoPosition : String = 'livingroom_1'
 
 var currentCamera : String = ''
-var isDoorClosed : bool = true
+var isDoorClosed : bool = false
 var office_pan : float = 0.0
 @export var isOnDoorSprite: bool
 var camera_active: bool = false

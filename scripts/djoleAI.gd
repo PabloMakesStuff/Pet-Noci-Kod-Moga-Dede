@@ -1,7 +1,7 @@
 extends Node2D
 
 # Djole movement mapa
-# livingroom_1 -> livingroom_2 -> balcony ->livingroom_3 -> hallway
+# livingroom_1 -> livingroom_2 -> livingroom_3 -> hallway	
 
 func _ready() -> void:
 	$Timer.timeout.connect(timeout)
@@ -17,7 +17,11 @@ func move() -> void:
 			Global.djolePosition = 'livingroom_2'
 		'livingroom_2':
 			Global.djolePosition = 'livingroom_3'
-			#Global.djolePosition = ['livingroom_3','balcony'].pick_random()
 		'livingroom_3':
 			Global.djolePosition = 'hallway'
+		'hallway':
+			if Global.isDoorClosed == true:
+				Global.djolePosition = 'livingroom_2'
+			else:
+				Global.djolePosition = 'office'
 	print(Global.djolePosition)

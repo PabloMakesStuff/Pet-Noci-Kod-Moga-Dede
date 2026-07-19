@@ -1,5 +1,2 @@
-res://scenes/camera_system.tscn
-res://shaders/shaderstatic.gdshader
 res://scenes/main_office.tscn
-res://scripts/camera_system.gd
-res://scripts/djoleAI.gd
+res://shaders/shaderstatic.gdshader

@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://c6ao73yw46wv5" path="res://scripts/camera_system.gd" id="1_7qjgd"]
 [ext_resource type="Texture2D" uid="uid://cbg1j1ydsds8y" path="res://textures/assets/camera/bacony_test.jpg" id="1_gyk7p"]
 [ext_resource type="Texture2D" uid="uid://ke0t8mf4npo8" path="res://textures/assets/camera/bathroom_test.jpg" id="2_7qjgd"]
+[ext_resource type="Texture2D" uid="uid://dgax20td11l5t" path="res://textures/assets/camera/balcony_marko.jpg" id="3_7353p"]
 [ext_resource type="Texture2D" uid="uid://gcagpeu8o7cp" path="res://textures/assets/camera/hallway_test.jpg" id="3_yvgkr"]
 [ext_resource type="Texture2D" uid="uid://boqd7jsovvy3k" path="res://textures/assets/camera/kitchen.jpg" id="5_wj1ut"]
 [ext_resource type="Texture2D" uid="uid://dgy28h7xj70d1" path="res://textures/assets/camera/livingroom/livingroom_empty.jpg" id="6_csjpi"]
 [ext_resource type="Texture2D" uid="uid://d1jh5okuw2fxj" path="res://textures/assets/camera/livingroom/livingroom_M1D1.jpg" id="7_3ahn5"]
 [ext_resource type="Shader" uid="uid://dbys0pcvs52sh" path="res://shaders/shaderstatic.gdshader" id="8_7qjgd"]
+[ext_resource type="Texture2D" uid="uid://0pby4yuun8em" path="res://textures/assets/camera/livingroom/livingroom_D1.jpg" id="8_8pex3"]
 [ext_resource type="Texture2D" uid="uid://bxvrgapci3jhw" path="res://icon.svg" id="8_csjpi"]
 [ext_resource type="Texture2D" uid="uid://cob4us106kmj0" path="res://textures/assets/camera/mapa.png" id="8_daps8"]
 [ext_resource type="Texture2D" uid="uid://ce1y3xtumjdt3" path="res://textures/static/8.png" id="8_nepne"]
@@ -15,10 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://bgwgoutfvshwk" path="res://textures/assets/camera/livingroom/livingroom_M1D3.jpg" id="9_18c2x"]
 [ext_resource type="Texture2D" uid="uid://jv680gjcbm3x" path="res://textures/static/10.png" id="9_dujr4"]
 [ext_resource type="Texture2D" uid="uid://ditt3j5djtyya" path="res://textures/assets/camera/camera_notsel.png" id="9_eqof2"]
+[ext_resource type="Texture2D" uid="uid://4l70anei3kv5" path="res://textures/assets/camera/livingroom/livingroom_D2.jpg" id="9_jru5o"]
 [ext_resource type="Texture2D" uid="uid://dk36x70holqe3" path="res://textures/assets/camera/livingroom/livingroom_M2D1.jpg" id="10_7353p"]
 [ext_resource type="Texture2D" uid="uid://kvocifajv6qu" path="res://textures/assets/camera/camera_select.png" id="10_au3m6"]
+[ext_resource type="Texture2D" uid="uid://bq31io5ehml70" path="res://textures/assets/camera/livingroom/livingroom_D3.jpg" id="10_bddjo"]
 [ext_resource type="Texture2D" uid="uid://dcbsnl02po4u3" path="res://textures/static/21.png" id="10_csjpi"]
 [ext_resource type="Texture2D" uid="uid://cfgysaoqgpuqq" path="res://textures/static/12.png" id="10_lugd1"]
+[ext_resource type="Texture2D" uid="uid://b2yxmm84qd014" path="res://textures/assets/camera/livingroom/livingroom_M1.jpg" id="11_2dn4o"]
 [ext_resource type="Texture2D" uid="uid://d04h0txkr5kcv" path="res://textures/static/22.png" id="11_45rcb"]
 [ext_resource type="Texture2D" uid="uid://ot3y5rgheoru" path="res://textures/assets/camera/livingroom/livingroom_M2D2.jpg" id="11_gpp71"]
 [ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="11_lugd1"]
@@ -32,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://ci4kg2jyh015o" path="res://textures/static/435.png" id="14_kxjl1"]
 [ext_resource type="Texture2D" uid="uid://bqest4r8f2vjo" path="res://textures/static/16.png" id="14_q65mb"]
 [ext_resource type="Texture2D" uid="uid://bwqvwy5d6b6f0" path="res://textures/assets/camera/livingroom/livingroom_M3D2.jpg" id="14_s7q5x"]
+[ext_resource type="Texture2D" uid="uid://b4ii6nx7jracr" path="res://textures/assets/camera/livingroom/livingroom_M2.jpg" id="14_tityn"]
 [ext_resource type="Texture2D" uid="uid://6fr2d17yuj15" path="res://textures/assets/camera/livingroom/livingroom_M3D3.jpg" id="15_8pex3"]
 [ext_resource type="Texture2D" uid="uid://0i43rvagp7cy" path="res://textures/static/17.png" id="15_321s0"]
 [ext_resource type="Texture2D" uid="uid://bdnelwxkv7eb1" path="res://textures/static/436.png" id="15_h4r4a"]
@@ -42,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://u76r1lutohs7" path="res://textures/static/20.png" id="17_ctgyo"]
 [ext_resource type="Texture2D" uid="uid://c648v5u724cy4" path="res://textures/static/438.png" id="17_v4vip"]
 [ext_resource type="Script" uid="uid://jxha5s07t170" path="res://scripts/CameraFeed.gd" id="17_wj1ut"]
+[ext_resource type="Texture2D" uid="uid://cousdbdbpchox" path="res://textures/assets/camera/livingroom/livingroom_M3.jpg" id="18_kfxbf"]
 [ext_resource type="Texture2D" uid="uid://dbg6bp4y13s15" path="res://textures/static/439.png" id="18_or6yr"]
 [ext_resource type="Script" uid="uid://b5xay8ujkf7eg" path="res://scripts/divided_static.gd" id="19_3ahn5"]
 [ext_resource type="Texture2D" uid="uid://l0wyhya63lju" path="res://textures/static/500.png" id="19_dujr4"]
@@ -54,6 +61,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"balcony",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7353p")
+}],
+"loop": 1,
+"name": &"balcony_marko",
 "speed": 5.0
 }, {
 "frames": [{
@@ -90,6 +105,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_8pex3")
+}],
+"loop": 1,
+"name": &"livingroom_D1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jru5o")
+}],
+"loop": 1,
+"name": &"livingroom_D2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_bddjo")
+}],
+"loop": 1,
+"name": &"livingroom_D3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_2dn4o")
+}],
+"loop": 1,
+"name": &"livingroom_M1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_3ahn5")
 }],
 "loop": 1,
@@ -114,6 +161,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("14_tityn")
+}],
+"loop": 1,
+"name": &"livingroom_M2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("10_7353p")
 }],
 "loop": 1,
@@ -134,6 +189,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"livingroom_M2D3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_kfxbf")
+}],
+"loop": 1,
+"name": &"livingroom_M3",
 "speed": 5.0
 }, {
 "frames": [{
