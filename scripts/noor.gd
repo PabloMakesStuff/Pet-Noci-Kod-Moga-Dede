@@ -16,9 +16,7 @@ func _on_button_pressed() -> void:
 	if Global.isDoorClosed == false:
 		$".".frame = 1
 		Global.isDoorClosed = true
-		print(Global.isDoorClosed)
 
 	else:
 		$".".frame = 0
 		Global.isDoorClosed = false
-		print(Global.isDoorClosed)

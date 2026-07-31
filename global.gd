@@ -1,10 +1,10 @@
 extends Node
 
-var AI = {'marko':20,'aleksa':0,'djole':20}
+var AI = {'marko':20,'aleksa':10,'djole':20}
 var markoRepelPressed : bool = false
 var DoorSceneOpened := false
 
-var aleksaPosition : String = 'toilet_1' #nema nikakvu vrednost za sada
+var aleksaPosition : String = 'bathroom_1' #nema nikakvu vrednost za sada
 var djolePosition : String = 'livingroom_1'
 var markoPosition : String = 'livingroom_1'
 
@@ -13,6 +13,9 @@ var isDoorClosed : bool = false
 var office_pan : float = 0.0
 @export var isOnDoorSprite: bool
 var camera_active: bool = false
+
+var aleksaChargePercent: float = 100
+var InternetDisabled: bool = false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

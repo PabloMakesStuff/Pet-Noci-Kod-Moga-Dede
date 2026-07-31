@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c6ao73yw46wv5" path="res://scripts/camera_system.gd" id="1_7qjgd"]
 [ext_resource type="Texture2D" uid="uid://cbg1j1ydsds8y" path="res://textures/assets/camera/bacony_test.jpg" id="1_gyk7p"]
-[ext_resource type="Texture2D" uid="uid://ke0t8mf4npo8" path="res://textures/assets/camera/bathroom_test.jpg" id="2_7qjgd"]
 [ext_resource type="Texture2D" uid="uid://dgax20td11l5t" path="res://textures/assets/camera/balcony_marko.jpg" id="3_7353p"]
 [ext_resource type="Texture2D" uid="uid://gcagpeu8o7cp" path="res://textures/assets/camera/hallway_test.jpg" id="3_yvgkr"]
+[ext_resource type="Texture2D" uid="uid://d0rtkwtum7700" path="res://textures/assets/camera/bathroom/20260731_150803.jpg" id="4_tityn"]
+[ext_resource type="Texture2D" uid="uid://f760dnhqxmxt" path="res://textures/assets/camera/bathroom/20260731_150758.jpg" id="5_kfxbf"]
 [ext_resource type="Texture2D" uid="uid://boqd7jsovvy3k" path="res://textures/assets/camera/kitchen.jpg" id="5_wj1ut"]
 [ext_resource type="Texture2D" uid="uid://dgy28h7xj70d1" path="res://textures/assets/camera/livingroom/livingroom_empty.jpg" id="6_csjpi"]
+[ext_resource type="Texture2D" uid="uid://bwh3xs8akfb4a" path="res://textures/assets/camera/bathroom/20260731_150652.jpg" id="6_x2bjh"]
 [ext_resource type="Texture2D" uid="uid://d1jh5okuw2fxj" path="res://textures/assets/camera/livingroom/livingroom_M1D1.jpg" id="7_3ahn5"]
+[ext_resource type="Texture2D" uid="uid://djt61o6sl1mn5" path="res://textures/assets/camera/bathroom/20260731_150522.jpg" id="7_62vag"]
 [ext_resource type="Shader" uid="uid://dbys0pcvs52sh" path="res://shaders/shaderstatic.gdshader" id="8_7qjgd"]
 [ext_resource type="Texture2D" uid="uid://0pby4yuun8em" path="res://textures/assets/camera/livingroom/livingroom_D1.jpg" id="8_8pex3"]
 [ext_resource type="Texture2D" uid="uid://bxvrgapci3jhw" path="res://icon.svg" id="8_csjpi"]
@@ -52,6 +55,8 @@
 [ext_resource type="Texture2D" uid="uid://dbg6bp4y13s15" path="res://textures/static/439.png" id="18_or6yr"]
 [ext_resource type="Script" uid="uid://b5xay8ujkf7eg" path="res://scripts/divided_static.gd" id="19_3ahn5"]
 [ext_resource type="Texture2D" uid="uid://l0wyhya63lju" path="res://textures/static/500.png" id="19_dujr4"]
+[ext_resource type="Script" uid="uid://c3bll3omiqdr6" path="res://scripts/chargeButton.gd" id="56_kfxbf"]
+[ext_resource type="Script" uid="uid://dnkhtgi0ewbyl" path="res://scripts/progress_bar.gd" id="57_x2bjh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yvt2o"]
 animations = [{
@@ -73,10 +78,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7qjgd")
+"texture": ExtResource("4_tityn")
 }],
 "loop": 1,
-"name": &"bathroom",
+"name": &"bathroom_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kfxbf")
+}],
+"loop": 1,
+"name": &"bathroom_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x2bjh")
+}],
+"loop": 1,
+"name": &"bathroom_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_62vag")
+}],
+"loop": 1,
+"name": &"bathroom_empty",
 "speed": 5.0
 }, {
 "frames": [{
@@ -358,7 +387,7 @@ script = ExtResource("1_7qjgd")
 position = Vector2(-175, -3.5762787e-07)
 scale = Vector2(0.82187146, 0.82187146)
 sprite_frames = SubResource("SpriteFrames_yvt2o")
-animation = &"livingroom"
+animation = &"kitchen"
 centered = false
 script = ExtResource("17_wj1ut")
 
@@ -507,6 +536,43 @@ shape = SubResource("RectangleShape2D_odjk5")
 position = Vector2(1274, 320)
 shape = SubResource("RectangleShape2D_m0v6u")
 
+[node name="Charge" type="TextureButton" parent="." unique_id=509491325]
+process_mode = 3
+visible = false
+offset_left = 578.0
+offset_top = 286.0
+offset_right = 706.0
+offset_bottom = 414.0
+texture_normal = ExtResource("8_csjpi")
+script = ExtResource("56_kfxbf")
+
+[node name="DischargeTimer" type="Timer" parent="Charge" unique_id=2105413058]
+wait_time = 0.5
+autostart = true
+
+[node name="ChargeTimer" type="Timer" parent="Charge" unique_id=1654441035]
+wait_time = 0.9
+autostart = true
+
+[node name="Percentage" type="ProgressBar" parent="Charge" unique_id=814127939]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 133.0
+offset_right = 129.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("57_x2bjh")
+
+[node name="Internet" type="TextureButton" parent="." unique_id=1196247358]
+offset_left = 267.0
+offset_top = 437.0
+offset_right = 395.0
+offset_bottom = 565.0
+texture_normal = ExtResource("8_csjpi")
+
+[node name="InternetFix" type="Timer" parent="Internet" unique_id=413816439]
+wait_time = 5.0
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/bathroom" to="." method="_on_bathroom_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/hallway" to="." method="_on_hallway_pressed"]
@@ -518,3 +584,5 @@ shape = SubResource("RectangleShape2D_m0v6u")
 [connection signal="mouse_exited" from="left" to="." method="_on_left_mouse_exited"]
 [connection signal="mouse_entered" from="right" to="." method="_on_right_mouse_entered"]
 [connection signal="mouse_exited" from="right" to="." method="_on_right_mouse_exited"]
+[connection signal="button_down" from="Charge" to="Charge" method="_on_button_down"]
+[connection signal="button_up" from="Charge" to="Charge" method="_on_button_up"]

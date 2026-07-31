@@ -1,8 +1,9 @@
-AudioStreamPlayer2D
-TextureButton
-Label
 Timer
+TextureButton
 Node2D
+ProgressBar
+Label
+AudioStreamPlayer2D
 ColorRect
 CanvasLayer
 AnimationPlayer
@@ -11,5 +12,3 @@ Area2D
 TextureRect
 ScrollContainer
 Sprite2D
-Button
-CheckButton

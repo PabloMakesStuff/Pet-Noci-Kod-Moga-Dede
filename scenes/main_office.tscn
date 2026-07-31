@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dfcfi5g0a2a4x" path="res://textures/assets/office/prompt_test.png" id="9_efwtk"]
 [ext_resource type="Script" uid="uid://cqyjt61oxsaab" path="res://scripts/markoAI.gd" id="11_c87i2"]
 [ext_resource type="Script" uid="uid://cwo2j8fs0mg60" path="res://scripts/djoleAI.gd" id="12_ot4no"]
+[ext_resource type="Script" uid="uid://sxjvpyd6fir1" path="res://scripts/aleksaAI.gd" id="13_s5i3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlsm3"]
 size = Vector2(544.14746, 913.0581)
@@ -123,6 +124,11 @@ script = ExtResource("12_ot4no")
 [node name="Timer" type="Timer" parent="djole AI" unique_id=1021985894]
 wait_time = 4.5
 autostart = true
+
+[node name="aleksa AI" type="Node2D" parent="." unique_id=2043428196]
+script = ExtResource("13_s5i3m")
+
+[node name="Timer" type="Timer" parent="aleksa AI" unique_id=1230879277]
 
 [connection signal="input_event" from="DeskTest/doorColision" to="DeskTest" method="_on_door_colision_input_event"]
 [connection signal="input_event" from="bonk" to="DeskTest" method="_on_bonk_input_event"]

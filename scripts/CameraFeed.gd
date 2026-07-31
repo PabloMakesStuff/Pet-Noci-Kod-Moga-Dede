@@ -55,7 +55,16 @@ func updatecamera() -> void:
 			if Global.markoPosition != 'balcony':
 				play("balcony")
 		'bathroom':
-			play('bathroom')
+			if Global.AI['aleksa'] == 0: play('bathroom_empty')
+			match Global.aleksaPosition:
+				'bathroom_1':
+					play('bathroom_1')
+				'bathroom_2':
+					play('bathroom_2')
+				'bathroom_3':
+					play('bathroom_3')
+				'office':
+					play('bathroom_empty')
 		'room1':
 			if Global.markoPosition == 'room1':
 				play('room1_marko')

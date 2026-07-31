@@ -50,16 +50,12 @@ func _process(delta: float) -> void:
 	camera_feed.position.x = lerp(camera_feed.position.x, target_offset, smoothing * delta)
 
 func _on_left_mouse_entered() -> void:
-	print("left entered")
 	pan_direction = 1
 func _on_left_mouse_exited() -> void:
-	print("left exited")
 	if pan_direction == 1:
 		pan_direction = 0
 func _on_right_mouse_entered() -> void:
-	print("right entered")
 	pan_direction = -1
 func _on_right_mouse_exited() -> void:
-	print("right exited")
 	if pan_direction == -1:
 		pan_direction = 0
