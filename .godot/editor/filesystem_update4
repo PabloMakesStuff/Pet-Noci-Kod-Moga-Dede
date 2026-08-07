@@ -1,8 +1,6 @@
-res://scenes/main_office.tscn
+res://scenes/door_scene.tscn
 res://shaders/shaderstatic.gdshader
+res://scenes/main_office.tscn
+res://scripts/djoleAI.gd
 res://scenes/camera_system.tscn
 res://scenes/internet.gd
-res://scripts/testlabel.gd
-res://scripts/progress_bar.gd
-res://global.gd
-res://scripts/djoleAI.gd

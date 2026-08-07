@@ -19,7 +19,7 @@ func move() -> void:
 		'livingroom_2':
 			Global.djolePosition = 'livingroom_3'
 		'livingroom_3':
-			if randi_range(1, 5) == 1:
+			if randi_range(1, 5) == 3:
 				Global.djolePosition = 'kitchen'
 				Global.isInternetBroken = true
 			if Global.markoPosition == 'hallway':

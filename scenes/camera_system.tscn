@@ -578,12 +578,11 @@ stream = ExtResource("59_a27hy")
 
 [node name="Label" type="Label" parent="Internet" unique_id=1843570455]
 layout_mode = 0
-offset_left = -16.0
-offset_top = -82.0
-offset_right = 153.0
-offset_bottom = -13.0
+offset_left = -22.0
+offset_top = -75.0
+offset_right = 147.0
+offset_bottom = -6.0
 theme_override_font_sizes/font_size = 50
-text = "asdasd"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/bathroom" to="." method="_on_bathroom_pressed"]

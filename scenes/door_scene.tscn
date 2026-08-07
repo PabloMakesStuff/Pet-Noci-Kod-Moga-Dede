@@ -31,7 +31,7 @@ size = Vector2(241, 504)
 
 [node name="noor" type="AnimatedSprite2D" parent="." unique_id=1860319245]
 position = Vector2(-164, 0)
-scale = Vector2(0.80721533, 0.80721533)
+scale = Vector2(0.80721533, 0.81510705)
 sprite_frames = SubResource("SpriteFrames_odjk5")
 animation = &"noor_empty"
 frame = 1
