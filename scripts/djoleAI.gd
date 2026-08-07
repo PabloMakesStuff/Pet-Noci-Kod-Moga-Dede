@@ -11,7 +11,6 @@ func _ready() -> void:
 func timeout() -> void:
 	if randi_range(1, 20) <= Global.AI['djole']:
 		move()
-		
 
 func move() -> void:
 	match Global.djolePosition:
@@ -22,7 +21,7 @@ func move() -> void:
 		'livingroom_3':
 			if randi_range(1, 5) == 1:
 				Global.djolePosition = 'kitchen'
-				Global.InternetDisabled = true
+				Global.isInternetBroken = true
 			if Global.markoPosition == 'hallway':
 				Global.djolePosition = 'livingroom_3'
 			else:

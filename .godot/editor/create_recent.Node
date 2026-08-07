@@ -1,9 +1,9 @@
+Label
+AudioStreamPlayer2D
 Timer
 TextureButton
 Node2D
 ProgressBar
-Label
-AudioStreamPlayer2D
 ColorRect
 CanvasLayer
 AnimationPlayer

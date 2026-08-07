@@ -57,6 +57,8 @@
 [ext_resource type="Texture2D" uid="uid://l0wyhya63lju" path="res://textures/static/500.png" id="19_dujr4"]
 [ext_resource type="Script" uid="uid://c3bll3omiqdr6" path="res://scripts/chargeButton.gd" id="56_kfxbf"]
 [ext_resource type="Script" uid="uid://dnkhtgi0ewbyl" path="res://scripts/progress_bar.gd" id="57_x2bjh"]
+[ext_resource type="Script" uid="uid://dah2thac57inw" path="res://scenes/internet.gd" id="58_62vag"]
+[ext_resource type="AudioStream" uid="uid://b4wj18skhek8t" path="res://audio/CAMERA_VIDEO_LOA_60105303.wav" id="59_a27hy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yvt2o"]
 animations = [{
@@ -387,7 +389,7 @@ script = ExtResource("1_7qjgd")
 position = Vector2(-175, -3.5762787e-07)
 scale = Vector2(0.82187146, 0.82187146)
 sprite_frames = SubResource("SpriteFrames_yvt2o")
-animation = &"kitchen"
+animation = &"bathroom_3"
 centered = false
 script = ExtResource("17_wj1ut")
 
@@ -569,9 +571,19 @@ offset_top = 437.0
 offset_right = 395.0
 offset_bottom = 565.0
 texture_normal = ExtResource("8_csjpi")
+script = ExtResource("58_62vag")
 
-[node name="InternetFix" type="Timer" parent="Internet" unique_id=413816439]
-wait_time = 5.0
+[node name="InternetFixSound" type="AudioStreamPlayer2D" parent="Internet" unique_id=231471562]
+stream = ExtResource("59_a27hy")
+
+[node name="Label" type="Label" parent="Internet" unique_id=1843570455]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -82.0
+offset_right = 153.0
+offset_bottom = -13.0
+theme_override_font_sizes/font_size = 50
+text = "asdasd"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/bathroom" to="." method="_on_bathroom_pressed"]
@@ -586,3 +598,4 @@ wait_time = 5.0
 [connection signal="mouse_exited" from="right" to="." method="_on_right_mouse_exited"]
 [connection signal="button_down" from="Charge" to="Charge" method="_on_button_down"]
 [connection signal="button_up" from="Charge" to="Charge" method="_on_button_up"]
+[connection signal="pressed" from="Internet" to="Internet" method="_on_pressed"]

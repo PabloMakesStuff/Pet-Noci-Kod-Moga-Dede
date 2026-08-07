@@ -129,6 +129,7 @@ autostart = true
 script = ExtResource("13_s5i3m")
 
 [node name="Timer" type="Timer" parent="aleksa AI" unique_id=1230879277]
+wait_time = 4.0
 
 [connection signal="input_event" from="DeskTest/doorColision" to="DeskTest" method="_on_door_colision_input_event"]
 [connection signal="input_event" from="bonk" to="DeskTest" method="_on_bonk_input_event"]

@@ -4,10 +4,11 @@ var AI = {'marko':20,'aleksa':10,'djole':20}
 var markoRepelPressed : bool = false
 var DoorSceneOpened := false
 
-var aleksaPosition : String = 'bathroom_1' #nema nikakvu vrednost za sada
+var aleksaPosition : String = 'bathroom_1'
 var djolePosition : String = 'livingroom_1'
 var markoPosition : String = 'livingroom_1'
 
+var isInternetBroken: bool = false
 var currentCamera : String = ''
 var isDoorClosed : bool = false
 var office_pan : float = 0.0
@@ -15,7 +16,6 @@ var office_pan : float = 0.0
 var camera_active: bool = false
 
 var aleksaChargePercent: float = 100
-var InternetDisabled: bool = false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
