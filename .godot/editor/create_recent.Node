@@ -1,6 +1,8 @@
+AnimatedSprite2D
+AudioStreamPlayer2D
+Node
 Label
 Sprite2D
-AudioStreamPlayer2D
 Timer
 TextureButton
 Node2D
@@ -10,5 +12,3 @@ CanvasLayer
 AnimationPlayer
 CollisionShape2D
 Area2D
-TextureRect
-ScrollContainer

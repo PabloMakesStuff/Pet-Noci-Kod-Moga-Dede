@@ -3,12 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://berbicio2oxho" path="res://textures/assets/office/door_test2.jpg" id="1_0y7gj"]
 [ext_resource type="Texture2D" uid="uid://bn24ky0ah4ro6" path="res://textures/assets/office/door_test.jpg" id="1_cis7l"]
 [ext_resource type="Script" uid="uid://n07ixjct27yd" path="res://scripts/doorScene_back.gd" id="2_d4rin"]
-[ext_resource type="Texture2D" uid="uid://hqr3tr7xqpxu" path="res://textures/assets/office/Rectangle 191.png" id="3_0y7gj"]
 [ext_resource type="Script" uid="uid://clgngfxu2u32p" path="res://scripts/noor.gd" id="3_dulfx"]
+[ext_resource type="Texture2D" uid="uid://djoffbc0gubai" path="res://textures/assets/office/BackToOffice.png" id="5_34cei"]
+[ext_resource type="FontFile" uid="uid://bj6p0ggute0ox" path="res://fonts/ShareTech-UI.ttf" id="6_5ujxh"]
 [ext_resource type="Script" uid="uid://cwgrb13qw2l5x" path="res://scripts/testlabel.gd" id="6_akmdg"]
 [ext_resource type="Texture2D" uid="uid://bxvrgapci3jhw" path="res://icon.svg" id="7_6nshc"]
 [ext_resource type="Script" uid="uid://c2o03u5adurfs" path="res://scripts/marko_odlazi.gd" id="8_lqp4w"]
-[ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="9_34cei"]
+[ext_resource type="AudioStream" uid="uid://ctbr2e7rhtl5e" path="res://textures/assets/audio/daddy.mp3" id="10_5ujxh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_odjk5"]
 animations = [{
@@ -31,7 +32,7 @@ size = Vector2(241, 504)
 
 [node name="noor" type="AnimatedSprite2D" parent="." unique_id=1860319245]
 position = Vector2(-164, 0)
-scale = Vector2(0.80721533, 0.81510705)
+scale = Vector2(0.81, 0.811)
 sprite_frames = SubResource("SpriteFrames_odjk5")
 animation = &"noor_empty"
 frame = 1
@@ -50,9 +51,21 @@ script = ExtResource("2_d4rin")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=779530022]
 position = Vector2(1182.9999, 357)
 scale = Vector2(0.8192771, 0.81927717)
-texture = ExtResource("3_0y7gj")
+texture = ExtResource("5_34cei")
+
+[node name="Label" type="Label" parent="Area2D/Sprite2D" unique_id=1192955664]
+offset_left = -65.91161
+offset_top = -248.99997
+offset_right = 54.926765
+offset_bottom = -6.9999695
+theme_override_fonts/font = ExtResource("6_5ujxh")
+theme_override_font_sizes/font_size = 40
+text = "Klikni da bi se vratio nazad"
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=75333592]
+visible = false
 position = Vector2(1225.5, 356)
 shape = SubResource("RectangleShape2D_odjk5")
 debug_color = Color(0, 0.6, 0.69803923, 1)
@@ -75,7 +88,7 @@ texture_normal = ExtResource("7_6nshc")
 script = ExtResource("8_lqp4w")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarkoOdlazi" unique_id=433209598]
-stream = ExtResource("9_34cei")
+stream = ExtResource("10_5ujxh")
 
 [connection signal="pressed" from="noor/Button" to="noor" method="_on_button_pressed"]
 [connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

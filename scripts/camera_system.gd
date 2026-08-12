@@ -39,7 +39,7 @@ func _on_balcony_pressed() -> void:
 
 func show_camera(current_camera: String) -> void:
 	Global.currentCamera = current_camera
-	$CameraMapUI/camSwitch.play()
+	SoundManager.play_sfx('switch_camera')
 	$"CameraMapUI/divided static".play("default")
 	$CameraFeed.updatecamera()
 

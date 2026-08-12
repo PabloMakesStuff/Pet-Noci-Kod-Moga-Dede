@@ -5,6 +5,9 @@ const CAMERA_SCENE: PackedScene = preload("res://scenes/camera_system.tscn")
 var camera_instance: CanvasLayer = null
 var camera_loading := false
 
+func _ready() -> void:
+	SoundManager.play_sfx('ambiance')
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("CameraFlip"):
 		if camera_loading: return

@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://b2yxmm84qd014" path="res://textures/assets/camera/livingroom/livingroom_M1.jpg" id="11_2dn4o"]
 [ext_resource type="Texture2D" uid="uid://d04h0txkr5kcv" path="res://textures/static/22.png" id="11_45rcb"]
 [ext_resource type="Texture2D" uid="uid://ot3y5rgheoru" path="res://textures/assets/camera/livingroom/livingroom_M2D2.jpg" id="11_gpp71"]
-[ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="11_lugd1"]
 [ext_resource type="Texture2D" uid="uid://wjrabfrrtvj1" path="res://textures/static/13.png" id="11_yvt2o"]
 [ext_resource type="Texture2D" uid="uid://b3iwtm4qo0sgl" path="res://textures/static/430.png" id="12_6kid5"]
 [ext_resource type="Texture2D" uid="uid://dyxs4e032k2dw" path="res://textures/static/14.png" id="12_kj2ym"]
@@ -56,9 +55,13 @@
 [ext_resource type="Script" uid="uid://b5xay8ujkf7eg" path="res://scripts/divided_static.gd" id="19_3ahn5"]
 [ext_resource type="Texture2D" uid="uid://l0wyhya63lju" path="res://textures/static/500.png" id="19_dujr4"]
 [ext_resource type="Script" uid="uid://c3bll3omiqdr6" path="res://scripts/chargeButton.gd" id="56_kfxbf"]
-[ext_resource type="Script" uid="uid://dnkhtgi0ewbyl" path="res://scripts/progress_bar.gd" id="57_x2bjh"]
-[ext_resource type="Script" uid="uid://dah2thac57inw" path="res://scenes/internet.gd" id="58_62vag"]
-[ext_resource type="AudioStream" uid="uid://b4wj18skhek8t" path="res://audio/CAMERA_VIDEO_LOA_60105303.wav" id="59_a27hy"]
+[ext_resource type="Texture2D" uid="uid://ug3lpwx687m1" path="res://textures/assets/camera/battery/empty_battery.png" id="56_uqtwm"]
+[ext_resource type="Texture2D" uid="uid://b0lp4e18ble4" path="res://textures/assets/camera/battery/full_batery.png" id="57_mgl1w"]
+[ext_resource type="Script" uid="uid://dah2thac57inw" path="res://scripts/internet.gd" id="58_62vag"]
+[ext_resource type="Texture2D" uid="uid://dlqp14vmkvvhe" path="res://textures/assets/camera/battery/half_batery.png" id="58_1811e"]
+[ext_resource type="Texture2D" uid="uid://t7cli6xgm0v7" path="res://textures/assets/camera/battery/lessfull_batery.png" id="59_gosad"]
+[ext_resource type="Texture2D" uid="uid://c8n71f3tvub37" path="res://textures/assets/camera/battery/lightred_batery.png" id="60_gebel"]
+[ext_resource type="Script" uid="uid://kwe7roojg1f7" path="res://scenes/batery_status.gd" id="61_mgl1w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yvt2o"]
 animations = [{
@@ -381,6 +384,49 @@ size = Vector2(204, 761)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0v6u"]
 size = Vector2(218, 332.5)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0v6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_uqtwm")
+}],
+"loop": 1,
+"name": &"empty_battery",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_mgl1w")
+}],
+"loop": 1,
+"name": &"full_batery",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_1811e")
+}],
+"loop": 1,
+"name": &"half_batery",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_gosad")
+}],
+"loop": 1,
+"name": &"lessfull_batery",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_gebel")
+}],
+"loop": 1,
+"name": &"lesshalf_batery",
+"speed": 5.0
+}]
+
 [node name="CameraSystem" type="CanvasLayer" unique_id=1282154074]
 layer = 50
 script = ExtResource("1_7qjgd")
@@ -389,7 +435,7 @@ script = ExtResource("1_7qjgd")
 position = Vector2(-175, -3.5762787e-07)
 scale = Vector2(0.82187146, 0.82187146)
 sprite_frames = SubResource("SpriteFrames_yvt2o")
-animation = &"bathroom_3"
+animation = &"bathroom_1"
 centered = false
 script = ExtResource("17_wj1ut")
 
@@ -453,9 +499,6 @@ sprite_frames = SubResource("SpriteFrames_nijh7")
 autoplay = "default"
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="camSwitch" type="AudioStreamPlayer2D" parent="CameraMapUI" unique_id=1366637768]
-stream = ExtResource("11_lugd1")
 
 [node name="RoomButtons" type="Control" parent="CameraMapUI" unique_id=36333411]
 anchors_preset = 0
@@ -540,30 +583,27 @@ shape = SubResource("RectangleShape2D_m0v6u")
 
 [node name="Charge" type="TextureButton" parent="." unique_id=509491325]
 process_mode = 3
-visible = false
-offset_left = 578.0
-offset_top = 286.0
-offset_right = 706.0
-offset_bottom = 414.0
-texture_normal = ExtResource("8_csjpi")
+offset_left = 715.0
+offset_top = 434.0
+offset_right = 829.0
+offset_bottom = 504.0
 script = ExtResource("56_kfxbf")
 
 [node name="DischargeTimer" type="Timer" parent="Charge" unique_id=2105413058]
-wait_time = 0.5
 autostart = true
 
 [node name="ChargeTimer" type="Timer" parent="Charge" unique_id=1654441035]
-wait_time = 0.9
+wait_time = 0.1
 autostart = true
 
-[node name="Percentage" type="ProgressBar" parent="Charge" unique_id=814127939]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 133.0
-offset_right = 129.0
-offset_bottom = 179.0
-theme_override_font_sizes/font_size = 30
-script = ExtResource("57_x2bjh")
+[node name="Batery" type="AnimatedSprite2D" parent="Charge" unique_id=1423814236]
+position = Vector2(123, 4)
+rotation = 1.5707964
+scale = Vector2(0.1898622, 0.18986222)
+sprite_frames = SubResource("SpriteFrames_m0v6u")
+animation = &"empty_battery"
+centered = false
+script = ExtResource("61_mgl1w")
 
 [node name="Internet" type="TextureButton" parent="." unique_id=1196247358]
 offset_left = 267.0
@@ -572,9 +612,6 @@ offset_right = 395.0
 offset_bottom = 565.0
 texture_normal = ExtResource("8_csjpi")
 script = ExtResource("58_62vag")
-
-[node name="InternetFixSound" type="AudioStreamPlayer2D" parent="Internet" unique_id=231471562]
-stream = ExtResource("59_a27hy")
 
 [node name="Label" type="Label" parent="Internet" unique_id=1843570455]
 layout_mode = 0

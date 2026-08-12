@@ -1,6 +1,9 @@
-res://scenes/door_scene.tscn
-res://shaders/shaderstatic.gdshader
 res://scenes/main_office.tscn
-res://scripts/djoleAI.gd
+res://shaders/shaderstatic.gdshader
+res://scripts/global_sound.gd
 res://scenes/camera_system.tscn
-res://scenes/internet.gd
+res://scripts/camera_system.gd
+res://scripts/main_office.gd
+res://scenes/batery_status.gd
+res://scripts/chargeButton.gd
+res://scenes/door_scene.tscn

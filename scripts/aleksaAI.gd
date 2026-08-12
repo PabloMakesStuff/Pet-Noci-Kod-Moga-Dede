@@ -7,8 +7,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if randf_range(1,20) <= Global.AI['aleksa']:
+	$Timer.timeout.connect(timeout)
+
+func timeout() -> void:
+	if randf_range(1,20) <= Global.AI['aleksa'] and Global.aleksaChargePercent == 0.0:
 		move()
+	if Global.aleksaChargePercent > 0.0 and Global.aleksaPosition != 'bathroom_1':
+		Global.aleksaPosition = 'bathroom_1'
 
 func move() -> void:
 	match Global.aleksaPosition:
