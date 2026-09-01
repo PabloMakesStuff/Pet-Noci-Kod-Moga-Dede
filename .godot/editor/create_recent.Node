@@ -1,7 +1,7 @@
+Label
 AnimatedSprite2D
 AudioStreamPlayer2D
 Node
-Label
 Sprite2D
 Timer
 TextureButton

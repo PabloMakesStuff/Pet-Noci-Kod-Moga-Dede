@@ -15,7 +15,9 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	if Global.isDoorClosed == false:
 		$".".frame = 1
+		SoundManager.play_sfx('door_close')
 		Global.isDoorClosed = true
 	else:
 		$".".frame = 0
+		SoundManager.play_sfx('door_open')
 		Global.isDoorClosed = false

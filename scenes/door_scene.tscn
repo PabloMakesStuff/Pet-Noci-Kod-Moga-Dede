@@ -21,7 +21,7 @@ animations = [{
 "texture": ExtResource("1_cis7l")
 }],
 "loop": 1,
-"name": &"noor_empty",
+"name": &"door",
 "speed": 5.0
 }]
 
@@ -34,8 +34,7 @@ size = Vector2(241, 504)
 position = Vector2(-164, 0)
 scale = Vector2(0.81, 0.811)
 sprite_frames = SubResource("SpriteFrames_odjk5")
-animation = &"noor_empty"
-frame = 1
+animation = &"door"
 centered = false
 script = ExtResource("3_dulfx")
 

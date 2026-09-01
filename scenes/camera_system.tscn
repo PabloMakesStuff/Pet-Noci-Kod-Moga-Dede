@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bvwdwn2p5xihg"]
 
 [ext_resource type="Script" uid="uid://c6ao73yw46wv5" path="res://scripts/camera_system.gd" id="1_7qjgd"]
-[ext_resource type="Texture2D" uid="uid://cbg1j1ydsds8y" path="res://textures/assets/camera/bacony_test.jpg" id="1_gyk7p"]
 [ext_resource type="Texture2D" uid="uid://dgax20td11l5t" path="res://textures/assets/camera/balcony_marko.jpg" id="3_7353p"]
 [ext_resource type="Texture2D" uid="uid://gcagpeu8o7cp" path="res://textures/assets/camera/hallway_test.jpg" id="3_yvgkr"]
 [ext_resource type="Texture2D" uid="uid://d0rtkwtum7700" path="res://textures/assets/camera/bathroom/20260731_150803.jpg" id="4_tityn"]
@@ -55,19 +54,22 @@
 [ext_resource type="Script" uid="uid://b5xay8ujkf7eg" path="res://scripts/divided_static.gd" id="19_3ahn5"]
 [ext_resource type="Texture2D" uid="uid://l0wyhya63lju" path="res://textures/static/500.png" id="19_dujr4"]
 [ext_resource type="Script" uid="uid://c3bll3omiqdr6" path="res://scripts/chargeButton.gd" id="56_kfxbf"]
-[ext_resource type="Texture2D" uid="uid://ug3lpwx687m1" path="res://textures/assets/camera/battery/empty_battery.png" id="56_uqtwm"]
-[ext_resource type="Texture2D" uid="uid://b0lp4e18ble4" path="res://textures/assets/camera/battery/full_batery.png" id="57_mgl1w"]
+[ext_resource type="Texture2D" uid="uid://ug3lpwx687m1" path="res://textures/assets/camera/bathroom/battery/empty_battery.png" id="56_uqtwm"]
+[ext_resource type="Texture2D" uid="uid://b0lp4e18ble4" path="res://textures/assets/camera/bathroom/battery/full_batery.png" id="57_mgl1w"]
 [ext_resource type="Script" uid="uid://dah2thac57inw" path="res://scripts/internet.gd" id="58_62vag"]
-[ext_resource type="Texture2D" uid="uid://dlqp14vmkvvhe" path="res://textures/assets/camera/battery/half_batery.png" id="58_1811e"]
-[ext_resource type="Texture2D" uid="uid://t7cli6xgm0v7" path="res://textures/assets/camera/battery/lessfull_batery.png" id="59_gosad"]
-[ext_resource type="Texture2D" uid="uid://c8n71f3tvub37" path="res://textures/assets/camera/battery/lightred_batery.png" id="60_gebel"]
-[ext_resource type="Script" uid="uid://kwe7roojg1f7" path="res://scenes/batery_status.gd" id="61_mgl1w"]
+[ext_resource type="Texture2D" uid="uid://dlqp14vmkvvhe" path="res://textures/assets/camera/bathroom/battery/half_batery.png" id="58_1811e"]
+[ext_resource type="Texture2D" uid="uid://t7cli6xgm0v7" path="res://textures/assets/camera/bathroom/battery/lessfull_batery.png" id="59_gosad"]
+[ext_resource type="Texture2D" uid="uid://c8n71f3tvub37" path="res://textures/assets/camera/bathroom/battery/lightred_batery.png" id="60_gebel"]
+[ext_resource type="Script" uid="uid://kwe7roojg1f7" path="res://scripts/batery_status.gd" id="61_mgl1w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uqtwm"]
+load_path = "res://.godot/imported/bacony_test.jpg-4bb0cc58e0057a4351bbf5405b47f3a6.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yvt2o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gyk7p")
+"texture": SubResource("CompressedTexture2D_uqtwm")
 }],
 "loop": 1,
 "name": &"balcony",
