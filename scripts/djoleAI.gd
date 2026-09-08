@@ -31,4 +31,6 @@ func move() -> void:
 		'hallway':
 			if Global.isDoorClosed == true:
 				Global.djolePosition = 'livingroom_2'
+			else:
+				Global.djolePosition = 'office'
 	print('djole: ',Global.djolePosition)

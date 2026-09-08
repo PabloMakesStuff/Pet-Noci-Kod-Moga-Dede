@@ -76,17 +76,15 @@ scale = Vector2(0.65995884, 0.65995896)
 texture = ExtResource("8_s5i3m")
 
 [node name="Label" type="Label" parent="DeskTest/promptForCam" unique_id=675564775]
-offset_left = -102.06456
-offset_top = -139.17891
-offset_right = 86.93544
-offset_bottom = 133.82109
+offset_left = -59.383015
+offset_top = -111.34312
+offset_right = 58.616985
+offset_bottom = 114.65688
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_re7b1")
 theme_override_font_sizes/font_size = 200
 text = "W"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="bonk" type="Area2D" parent="." unique_id=1334136740]
 process_mode = 3

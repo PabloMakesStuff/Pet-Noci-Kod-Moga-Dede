@@ -68,4 +68,7 @@ func updatecamera() -> void:
 			else:
 				play('room1')
 		'hallway':
-			play('hallway')
+			if Global.markoPosition == 'hallway':
+				play('MarkoHallway')
+			if Global.djolePosition == 'hallway':
+				play('DjoleHallway')

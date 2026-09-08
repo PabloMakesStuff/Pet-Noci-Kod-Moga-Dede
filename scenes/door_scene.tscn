@@ -1,27 +1,48 @@
 [gd_scene format=3 uid="uid://d1p6gpui6lxay"]
 
+[ext_resource type="Texture2D" uid="uid://b3bi3b038e4ji" path="res://textures/assets/office/DjolePika.jpg" id="1_0qci3"]
 [ext_resource type="Texture2D" uid="uid://berbicio2oxho" path="res://textures/assets/office/door_test2.jpg" id="1_0y7gj"]
 [ext_resource type="Texture2D" uid="uid://bn24ky0ah4ro6" path="res://textures/assets/office/door_test.jpg" id="1_cis7l"]
+[ext_resource type="Texture2D" uid="uid://pmhple315ucb" path="res://textures/assets/office/MarkoPika.jpg" id="2_bhceh"]
 [ext_resource type="Script" uid="uid://n07ixjct27yd" path="res://scripts/doorScene_back.gd" id="2_d4rin"]
 [ext_resource type="Script" uid="uid://clgngfxu2u32p" path="res://scripts/noor.gd" id="3_dulfx"]
 [ext_resource type="Texture2D" uid="uid://djoffbc0gubai" path="res://textures/assets/office/BackToOffice.png" id="5_34cei"]
 [ext_resource type="FontFile" uid="uid://bj6p0ggute0ox" path="res://fonts/ShareTech-UI.ttf" id="6_5ujxh"]
-[ext_resource type="Script" uid="uid://cwgrb13qw2l5x" path="res://scripts/testlabel.gd" id="6_akmdg"]
 [ext_resource type="Texture2D" uid="uid://bxvrgapci3jhw" path="res://icon.svg" id="7_6nshc"]
 [ext_resource type="Script" uid="uid://c2o03u5adurfs" path="res://scripts/marko_odlazi.gd" id="8_lqp4w"]
-[ext_resource type="AudioStream" uid="uid://ctbr2e7rhtl5e" path="res://textures/assets/audio/daddy.mp3" id="10_5ujxh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_odjk5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0y7gj")
+"texture": ExtResource("1_0qci3")
+}],
+"loop": 1,
+"name": &"Djole",
+"speed": 5.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bhceh")
+}],
+"loop": 1,
+"name": &"Marko",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0y7gj")
+}],
+"loop": 1,
+"name": &"Prazno_ot",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_cis7l")
 }],
 "loop": 1,
-"name": &"door",
+"name": &"Prazno_zat",
 "speed": 5.0
 }]
 
@@ -34,7 +55,7 @@ size = Vector2(241, 504)
 position = Vector2(-164, 0)
 scale = Vector2(0.81, 0.811)
 sprite_frames = SubResource("SpriteFrames_odjk5")
-animation = &"door"
+animation = &"Prazno_ot"
 centered = false
 script = ExtResource("3_dulfx")
 
@@ -69,15 +90,6 @@ position = Vector2(1225.5, 356)
 shape = SubResource("RectangleShape2D_odjk5")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1831034392]
-offset_left = 386.0
-offset_top = 100.0
-offset_right = 651.3043
-offset_bottom = 154.0
-theme_override_font_sizes/font_size = 32
-text = "Na vratima je: "
-script = ExtResource("6_akmdg")
-
 [node name="MarkoOdlazi" type="TextureButton" parent="." unique_id=43408039]
 offset_left = 871.0
 offset_top = 548.0
@@ -85,9 +97,6 @@ offset_right = 999.0
 offset_bottom = 676.0
 texture_normal = ExtResource("7_6nshc")
 script = ExtResource("8_lqp4w")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarkoOdlazi" unique_id=433209598]
-stream = ExtResource("10_5ujxh")
 
 [connection signal="pressed" from="noor/Button" to="noor" method="_on_button_pressed"]
 [connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

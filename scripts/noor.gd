@@ -9,15 +9,24 @@ func _ready() -> void:
 		$".".frame = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	if Global.isDoorClosed:
+		if $".".animation != "Prazno_zat":
+			$".".play("Prazno_zat")
+	else:
+		if Global.djolePosition == "hallway":
+			if $".".animation != "Djole":
+				$".".play("Djole")
+		elif Global.markoPosition == "hallway":
+			if $".".animation != "Marko":
+				$".".play("Marko")
+		else:
+			if $".".animation != "Prazno_ot":
+				$".".play("Prazno_ot")
 
 func _on_button_pressed() -> void:
-	if Global.isDoorClosed == false:
-		$".".frame = 1
+	if Global.isDoorClosed == true:
 		SoundManager.play_sfx('door_close')
-		Global.isDoorClosed = true
 	else:
-		$".".frame = 0
 		SoundManager.play_sfx('door_open')
-		Global.isDoorClosed = false
+	Global.isDoorClosed = not Global.isDoorClosed

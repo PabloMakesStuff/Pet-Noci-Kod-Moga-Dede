@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bvwdwn2p5xihg"]
 
 [ext_resource type="Script" uid="uid://c6ao73yw46wv5" path="res://scripts/camera_system.gd" id="1_7qjgd"]
+[ext_resource type="Texture2D" uid="uid://bh67coteikhtu" path="res://textures/assets/camera/hallway/DjoleHallway.jpg" id="2_1811e"]
 [ext_resource type="Texture2D" uid="uid://dgax20td11l5t" path="res://textures/assets/camera/balcony_marko.jpg" id="3_7353p"]
+[ext_resource type="Texture2D" uid="uid://dnjsy0w6kcajl" path="res://textures/assets/camera/hallway/MarkoHallway.jpg" id="3_gosad"]
 [ext_resource type="Texture2D" uid="uid://gcagpeu8o7cp" path="res://textures/assets/camera/hallway_test.jpg" id="3_yvgkr"]
 [ext_resource type="Texture2D" uid="uid://d0rtkwtum7700" path="res://textures/assets/camera/bathroom/20260731_150803.jpg" id="4_tityn"]
 [ext_resource type="Texture2D" uid="uid://f760dnhqxmxt" path="res://textures/assets/camera/bathroom/20260731_150758.jpg" id="5_kfxbf"]
@@ -67,6 +69,22 @@ load_path = "res://.godot/imported/bacony_test.jpg-4bb0cc58e0057a4351bbf5405b47f
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yvt2o"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1811e")
+}],
+"loop": 1,
+"name": &"DjoleHallway",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gosad")
+}],
+"loop": 1,
+"name": &"MarkoHallway",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_uqtwm")
@@ -437,7 +455,7 @@ script = ExtResource("1_7qjgd")
 position = Vector2(-175, -3.5762787e-07)
 scale = Vector2(0.82187146, 0.82187146)
 sprite_frames = SubResource("SpriteFrames_yvt2o")
-animation = &"bathroom_1"
+animation = &"MarkoHallway"
 centered = false
 script = ExtResource("17_wj1ut")
 

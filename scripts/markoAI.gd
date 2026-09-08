@@ -5,8 +5,6 @@ extends Node2D
 # livingroom_3 <-> room1_marko, balcony_marko
 # room1 <-> hallway, livingroom_3
 
-signal MarkoIsAtTheDoor
-
 func _ready() -> void:
 	$Timer.timeout.connect(timeout)
 
@@ -31,4 +29,6 @@ func move() -> void:
 				Global.markoPosition = 'room1'
 			elif (Global.isDoorClosed == false and Global.markoRepelPressed == true):
 				Global.markoPosition = 'livingroom_2'
+			else:
+				Global.markoPosition = 'office'
 	print('marko: ', Global.markoPosition)
