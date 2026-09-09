@@ -40,15 +40,18 @@ func play_sfx(sound_name: String, volume_db: float = 0.0, duration: float = -1.0
 		push_error("SoundManager: no sound registered for '%s'" % sound_name)
 		return
 
+	#ubacuje sound u listu svih zvukova
 	var player := _pool[_next_index]
 	_next_index = (_next_index + 1) % POOL_SIZE
 
 	player.stream = SOUNDS[sound_name]
 	player.volume_db = volume_db
 	player.play()
-	
+
 	if duration > 0.0:
-		stop_after(player,duration)
+		await stop_after(player, duration)
+	else:
+		await player.finished
 
 func stop_after(player: AudioStreamPlayer, duration: float) -> void:
 	var stream_at_call := player.stream

@@ -8,7 +8,7 @@ var aleksaPosition : String = 'bathroom_1'
 var djolePosition : String = 'livingroom_1'
 var markoPosition : String = 'livingroom_1'
 
-var isInternetBroken: bool = false
+var isInternetBroken: bool = true
 var currentCamera : String = ''
 var isDoorClosed : bool = false
 var office_pan : float = 0.0

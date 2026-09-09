@@ -27,7 +27,7 @@ func move() -> void:
 		'hallway':
 			if Global.djolePosition == 'hallway':
 				Global.markoPosition = 'room1'
-			elif (Global.isDoorClosed == false and Global.markoRepelPressed == true):
+			if (Global.isDoorClosed == false and Global.markoRepelPressed == true):
 				Global.markoPosition = 'livingroom_2'
 			else:
 				Global.markoPosition = 'office'

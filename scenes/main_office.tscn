@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c2skddotm5ecs" path="res://textures/assets/office/desk.jpg" id="2_s5i3m"]
 [ext_resource type="Script" uid="uid://dve5b3g0jrvmo" path="res://scripts/pan_view.gd" id="2_t7ome"]
 [ext_resource type="Script" uid="uid://bbfxbvc0430dp" path="res://scripts/door_colision.gd" id="3_01122"]
-[ext_resource type="AudioStream" uid="uid://dvsatvo5ptqph" path="res://audio/darkness music.wav" id="4_qlsm3"]
 [ext_resource type="Texture2D" uid="uid://dkvytmxj418hi" path="res://textures/assets/office/SelectForDoor.png" id="6_ot4no"]
 [ext_resource type="FontFile" uid="uid://bj6p0ggute0ox" path="res://fonts/ShareTech-UI.ttf" id="7_re7b1"]
 [ext_resource type="Texture2D" uid="uid://c4jvkxrotlid6" path="res://textures/assets/office/w_button.png" id="8_s5i3m"]
@@ -38,12 +37,6 @@ min_pan = 0.0
 position = Vector2(36.391785, 3.9924622)
 scale = Vector2(0.44807097, 0.448071)
 script = ExtResource("3_01122")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DeskTest/doorColision" unique_id=1058535023]
-process_mode = 3
-position = Vector2(-1574.9597, -939.2202)
-scale = Vector2(2.6162121, 2.6162124)
-stream = ExtResource("4_qlsm3")
 
 [node name="doorColision" type="CollisionShape2D" parent="DeskTest/doorColision" unique_id=823170123]
 z_index = 1
@@ -129,10 +122,6 @@ script = ExtResource("13_s5i3m")
 [node name="Timer" type="Timer" parent="aleksa AI" unique_id=1230879277]
 wait_time = 1.5
 autostart = true
-
-[node name="AudioLibrary" type="Node" parent="." unique_id=353326710]
-
-[node name="daddy" type="AudioStreamPlayer2D" parent="AudioLibrary" unique_id=685634966]
 
 [connection signal="input_event" from="DeskTest/doorColision" to="DeskTest" method="_on_door_colision_input_event"]
 [connection signal="input_event" from="bonk" to="DeskTest" method="_on_bonk_input_event"]

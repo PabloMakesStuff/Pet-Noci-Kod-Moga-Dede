@@ -63,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://t7cli6xgm0v7" path="res://textures/assets/camera/bathroom/battery/lessfull_batery.png" id="59_gosad"]
 [ext_resource type="Texture2D" uid="uid://c8n71f3tvub37" path="res://textures/assets/camera/bathroom/battery/lightred_batery.png" id="60_gebel"]
 [ext_resource type="Script" uid="uid://kwe7roojg1f7" path="res://scripts/batery_status.gd" id="61_mgl1w"]
+[ext_resource type="FontFile" uid="uid://bj6p0ggute0ox" path="res://fonts/ShareTech-UI.ttf" id="64_gosad"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uqtwm"]
 load_path = "res://.godot/imported/bacony_test.jpg-4bb0cc58e0057a4351bbf5405b47f3a6.ctex"
@@ -455,17 +456,9 @@ script = ExtResource("1_7qjgd")
 position = Vector2(-175, -3.5762787e-07)
 scale = Vector2(0.82187146, 0.82187146)
 sprite_frames = SubResource("SpriteFrames_yvt2o")
-animation = &"MarkoHallway"
+animation = &"hallway"
 centered = false
 script = ExtResource("17_wj1ut")
-
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1093444812]
-z_index = 3
-offset_left = 1153.0
-offset_top = 14.0
-offset_right = 1281.0
-offset_bottom = 142.0
-texture_normal = ExtResource("8_csjpi")
 
 [node name="CameraMapUI" type="Control" parent="." unique_id=1139767289]
 layout_mode = 3
@@ -641,7 +634,19 @@ offset_right = 147.0
 offset_bottom = -6.0
 theme_override_font_sizes/font_size = 50
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Label" type="Label" parent="." unique_id=343097094]
+offset_left = 1085.0
+offset_top = -25.0
+offset_right = 1286.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("64_gosad")
+theme_override_font_sizes/font_size = 80
+text = "12:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Label" unique_id=373177065]
+
 [connection signal="pressed" from="CameraMapUI/RoomButtons/bathroom" to="." method="_on_bathroom_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/hallway" to="." method="_on_hallway_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/kitchen" to="." method="_on_kitchen_pressed"]

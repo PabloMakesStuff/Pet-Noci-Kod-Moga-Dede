@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	if Global.isInternetBroken == false:
-		await $InternetFixSound.finished
-		Global.isInternetBroken = true
+	if Global.isInternetBroken == true:
+		await SoundManager.play_sfx('internet_fixing',0.0,5.0)
+		Global.isInternetBroken = false
 		$Label.text = str(Global.isInternetBroken)

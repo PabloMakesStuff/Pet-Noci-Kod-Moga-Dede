@@ -1,9 +1,9 @@
+Timer
 Label
 AnimatedSprite2D
 AudioStreamPlayer2D
 Node
 Sprite2D
-Timer
 TextureButton
 Node2D
 ProgressBar

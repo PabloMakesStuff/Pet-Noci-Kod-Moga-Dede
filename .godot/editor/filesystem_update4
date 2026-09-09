@@ -1,11 +1,10 @@
 res://scenes/camera_system.tscn
 res://shaders/shaderstatic.gdshader
-res://scenes/door_scene.tscn
-res://scripts/CameraFeed.gd
-res://scripts/noor.gd
+res://scripts/internet.gd
+res://scripts/aleksaAI.gd
+res://scripts/camera_system.gd
 res://scenes/main_office.tscn
-res://scripts/markoAI.gd
 res://global.gd
-res://scripts/batery_status.gd
-res://scripts/djoleAI.gd
-res://scripts/marko_odlazi.gd
+res://scripts/global_sound.gd
+res://scripts/markoAI.gd
+res://scripts/CameraFeed.gd
