@@ -1,12 +1,45 @@
 extends AnimatedSprite2D
 
+var sound = ['kolazero1','kolazero2','pustinet1','pustinet2','pustinet3','pustinet4']
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.DoorSceneOpened = true
 	if Global.isDoorClosed == true:
-		$".".frame = 1
+		$".".play('Prazno_ot')
 	else:
-		$".".frame = 0
+		$".".play("Prazno_zat")
+		
+	Global.jumpscare_requested.connect(_on_jumpscare_requested)
+	
+	
+func _on_jumpscare_requested(which: String) -> void:
+	match which:
+		"marko":
+			$"../jumpscare_marko".show()
+			$"../jumpscare_marko".play('marko')
+			jumpscare_transition('marko')
+		'djole':
+			$"../jumpscares".show()
+			$"../jumpscares".play("djole")
+			jumpscare_transition('djole')
+		'aleksa':
+			$"../jumpscares".show()
+			$"../jumpscares".play("aleksa")
+			jumpscare_transition('aleksa')
+
+func jumpscare_transition(charachter: String) -> void:
+	get_tree().paused = true
+	match charachter:
+		'djole':
+			await SoundManager.play_sfx(['djole_jumpscare1','djole_jumpscare2'].pick_random())
+		'marko':
+			await SoundManager.play_sfx('marko_jumpscare')
+		'aleksa':
+			print('pusi ga aleksa')
+	
+	await get_tree().create_timer(1.5, true).timeout
+	get_tree().change_scene_to_file("res://scenes/game_over_scene.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -20,6 +53,7 @@ func _process(_delta: float) -> void:
 		elif Global.markoPosition == "hallway":
 			if $".".animation != "Marko":
 				$".".play("Marko")
+				SoundManager.play_sfx(sound.pick_random())
 		else:
 			if $".".animation != "Prazno_ot":
 				$".".play("Prazno_ot")

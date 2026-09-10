@@ -64,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://c8n71f3tvub37" path="res://textures/assets/camera/bathroom/battery/lightred_batery.png" id="60_gebel"]
 [ext_resource type="Script" uid="uid://kwe7roojg1f7" path="res://scripts/batery_status.gd" id="61_mgl1w"]
 [ext_resource type="FontFile" uid="uid://bj6p0ggute0ox" path="res://fonts/ShareTech-UI.ttf" id="64_gosad"]
+[ext_resource type="Script" uid="uid://b4i32yadhykji" path="res://scripts/nighttimer.gd" id="65_gebel"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uqtwm"]
 load_path = "res://.godot/imported/bacony_test.jpg-4bb0cc58e0057a4351bbf5405b47f3a6.ctex"
@@ -456,7 +457,7 @@ script = ExtResource("1_7qjgd")
 position = Vector2(-175, -3.5762787e-07)
 scale = Vector2(0.82187146, 0.82187146)
 sprite_frames = SubResource("SpriteFrames_yvt2o")
-animation = &"hallway"
+animation = &"DjoleHallway"
 centered = false
 script = ExtResource("17_wj1ut")
 
@@ -644,8 +645,10 @@ theme_override_font_sizes/font_size = 80
 text = "12:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("65_gebel")
 
 [node name="Timer" type="Timer" parent="Label" unique_id=373177065]
+autostart = true
 
 [connection signal="pressed" from="CameraMapUI/RoomButtons/bathroom" to="." method="_on_bathroom_pressed"]
 [connection signal="pressed" from="CameraMapUI/RoomButtons/hallway" to="." method="_on_hallway_pressed"]
@@ -660,3 +663,4 @@ vertical_alignment = 1
 [connection signal="button_down" from="Charge" to="Charge" method="_on_button_down"]
 [connection signal="button_up" from="Charge" to="Charge" method="_on_button_up"]
 [connection signal="pressed" from="Internet" to="Internet" method="_on_pressed"]
+[connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]

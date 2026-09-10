@@ -16,14 +16,17 @@ const SOUNDS := {
 	'daddy': preload("res://textures/assets/audio/daddy.mp3"),
 	'duvaj_ga1': preload("res://textures/assets/audio/DuvajGa1.mp3"),
 	'duvaj_ga2': preload("res://textures/assets/audio/DuvajGa2.mp3"),
-	'ambiance': preload("res://textures/assets/audio/fanblowingAmbiance.mp3"),
 	'kolazero1': preload("res://textures/assets/audio/KolaZero1.mp3"),
 	'kolazero2': preload("res://textures/assets/audio/KolaZero2.mp3"),
 	'pustinet1': preload("res://textures/assets/audio/PustiNet1.mp3"),
 	'pustinet2': preload("res://textures/assets/audio/PustiNet2.mp3"),
 	'pustinet3': preload("res://textures/assets/audio/PustiNet3.mp3"),
 	'pustinet4': preload("res://textures/assets/audio/PustiNet4.mp3"),
-	'internet_fixing': preload("res://textures/assets/audio/internetFixing.mp3")
+	'internet_fixing': preload("res://textures/assets/audio/internetFixing.mp3"),
+	'teranje1': preload("res://textures/assets/audio/ajdebrebezi.mp3"),
+	'teranje2': preload("res://textures/assets/audio/bezi.mp3"),
+	'teranje3': preload("res://textures/assets/audio/nema.mp3"),
+	'teranje4': preload("res://textures/assets/audio/nemozemo.mp3")
 }
 
 var _pool: Array[AudioStreamPlayer] = []

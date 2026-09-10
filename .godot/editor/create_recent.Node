@@ -1,7 +1,11 @@
-Timer
-Label
+Area2D
+CollisionShape2D
+AnimationPlayer
 AnimatedSprite2D
 AudioStreamPlayer2D
+AudioListener2D
+Timer
+Label
 Node
 Sprite2D
 TextureButton
@@ -9,6 +13,3 @@ Node2D
 ProgressBar
 ColorRect
 CanvasLayer
-AnimationPlayer
-CollisionShape2D
-Area2D

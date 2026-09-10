@@ -27,10 +27,10 @@
 [ext_resource type="Script" uid="uid://b5xay8ujkf7eg" path="res://scripts/divided_static.gd" id="26_tr0cc"]
 [ext_resource type="Texture2D" uid="uid://c7utdpsotkkb" path="res://textures/static/437.png" id="27_dxxag"]
 [ext_resource type="Script" uid="uid://dl3dw808xr13h" path="res://scripts/manu button.gd" id="27_ntufj"]
-[ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://audio/blip3.wav" id="28_2t4ok"]
-[ext_resource type="AudioStream" uid="uid://dvsatvo5ptqph" path="res://audio/darkness music.wav" id="28_ccuh4"]
+[ext_resource type="AudioStream" uid="uid://di0n233tgwpwf" path="res://textures/assets/audio/blip3.wav" id="28_2t4ok"]
+[ext_resource type="AudioStream" uid="uid://dvsatvo5ptqph" path="res://textures/assets/audio/darkness music.wav" id="28_ccuh4"]
 [ext_resource type="Texture2D" uid="uid://c648v5u724cy4" path="res://textures/static/438.png" id="28_yxlfc"]
-[ext_resource type="AudioStream" uid="uid://dhen7uyftrv80" path="res://audio/static.wav" id="29_3eqvg"]
+[ext_resource type="AudioStream" uid="uid://dhen7uyftrv80" path="res://textures/assets/audio/static.wav" id="29_3eqvg"]
 [ext_resource type="Texture2D" uid="uid://dbg6bp4y13s15" path="res://textures/static/439.png" id="29_5p1tb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvtym"]
@@ -231,6 +231,7 @@ cache/0/50/0/underline_thickness = 0.0
 cache/0/50/0/scale = 1.0
 
 [node name="Tittle" type="Node2D" unique_id=515226153]
+process_mode = 3
 position = Vector2(1, -4)
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=1400587652]

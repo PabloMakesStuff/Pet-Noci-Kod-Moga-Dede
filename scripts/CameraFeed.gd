@@ -1,7 +1,6 @@
 extends AnimatedSprite2D
 
 const LIVINGROOM_SPOTS := ['livingroom_1', 'livingroom_2', 'livingroom_3']
-var sound = ['duvaj_ga1','duvaj_ga2','kolazero1','kolazero2','pustinet1','pustinet2','pustinet3','pustinet4']
 
 func _process(delta: float) -> void:
 	updatecamera()
@@ -71,7 +70,6 @@ func updatecamera() -> void:
 		'hallway':
 			if Global.markoPosition == 'hallway':
 				play('MarkoHallway')
-				SoundManager.play_sfx(str(sound.pick_random()))
 			if Global.djolePosition == 'hallway':
 				play('DjoleHallway')
 			else:

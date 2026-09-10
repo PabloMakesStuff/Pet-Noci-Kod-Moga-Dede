@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://keekun4cja6y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_odjk5"]
+radius = 116.01724
+
+[node name="GameOver" type="Node2D" unique_id=2015207849]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=131583405]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1605470167]
+position = Vector2(311, 222)
+shape = SubResource("CircleShape2D_odjk5")

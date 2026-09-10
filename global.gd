@@ -1,8 +1,9 @@
 extends Node
 
-var AI = {'marko':20,'aleksa':20,'djole':20}
+var AI = {'marko':20,'aleksa':1,'djole':1}
 var markoRepelPressed : bool = false
 var DoorSceneOpened := false
+signal jumpscare_requested(which: String)
 
 var aleksaPosition : String = 'bathroom_1'
 var djolePosition : String = 'livingroom_1'

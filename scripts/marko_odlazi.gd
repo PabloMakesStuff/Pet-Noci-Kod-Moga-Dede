@@ -1,6 +1,8 @@
 extends TextureButton
 
+var sound = ['teranje1','teranje2','teranje3','teranje4']
+
 func _on_pressed() -> void:
 	Global.markoRepelPressed = true
-	SoundManager.play_sfx('')
+	await SoundManager.play_sfx(sound.pick_random())
 	Global.markoRepelPressed = false
