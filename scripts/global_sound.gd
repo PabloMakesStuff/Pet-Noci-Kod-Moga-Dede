@@ -35,6 +35,7 @@ var _next_index := 0
 func _ready() -> void:
 	for i in POOL_SIZE:
 		var player := AudioStreamPlayer.new()
+		player.process_mode = Node.PROCESS_MODE_ALWAYS
 		add_child(player)
 		_pool.append(player)
 

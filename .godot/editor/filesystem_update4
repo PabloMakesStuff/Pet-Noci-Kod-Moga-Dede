@@ -1,10 +1,6 @@
-res://scenes/door_scene.tscn
+res://scenes/game_over_scene.tscn
 res://shaders/shaderstatic.gdshader
 res://scenes/main_office.tscn
-res://scenes/camera_system.tscn
-res://global.gd
+res://scripts/global_sound.gd
 res://scripts/markoAI.gd
-res://scripts/noor.gd
-res://scripts/marko_odlazi.gd
-res://scripts/freddy.gd
-res://scripts/office_room.gd
+res://scenes/door_scene.tscn

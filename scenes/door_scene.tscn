@@ -334,9 +334,8 @@ script = ExtResource("8_lqp4w")
 
 [node name="jumpscare_marko" type="AnimatedSprite2D" parent="." unique_id=1902828517]
 process_mode = 3
-visible = false
-position = Vector2(-372.7793, 43)
-scale = Vector2(0.95889026, 0.960074)
+position = Vector2(-449, -25)
+scale = Vector2(1.0633909, 1.0647036)
 sprite_frames = SubResource("SpriteFrames_bbumg")
 animation = &"marko"
 frame = 19

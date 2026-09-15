@@ -37,6 +37,7 @@ func move() -> void:
 				Global.markoPosition = 'office'
 				$Timer.wait_time = 2.0
 		'office':
+			$Timer.stop()
 			Global.jumpscare_requested.emit('marko')
 
 	print('marko: ', Global.markoPosition)
