@@ -39,7 +39,7 @@ func jumpscare_transition(charachter: String) -> void:
 			print('pusi ga aleksa')
 	
 	await get_tree().create_timer(1.5, true).timeout
-	get_tree().change_scene_to_file("res://scenes/game_over_scene.tscn")
+	SceneTransition.fade_to_scene("res://scenes/game_over_scene.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

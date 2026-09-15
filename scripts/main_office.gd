@@ -5,6 +5,11 @@ const CAMERA_SCENE: PackedScene = preload("res://scenes/camera_system.tscn")
 var camera_instance: CanvasLayer = null
 var camera_loading := false
 
+func _ready() -> void:
+	camera_instance = CAMERA_SCENE.instantiate()
+	camera_instance.visible = false
+	add_child(camera_instance)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("CameraFlip"):
 		SoundManager.play_sfx('switch_camera')
@@ -15,10 +20,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera_loading = false
 
 func _toggle_camera_action() -> void:
-	if camera_instance == null:
-		camera_instance = CAMERA_SCENE.instantiate()
-		add_child(camera_instance)  # CanvasLayer renders on top regardless of tree depth
-
 	Global.camera_active = !Global.camera_active
 	camera_instance.visible = Global.camera_active
 

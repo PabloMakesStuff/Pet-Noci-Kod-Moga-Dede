@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://c0hmxqc52od1o"
 SoundManager="*uid://c47kwbxg60cas"
+SceneTransition="*uid://cfck8k2huxxdc"
 
 [display]
 

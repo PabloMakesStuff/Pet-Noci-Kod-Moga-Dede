@@ -646,6 +646,7 @@ text = "12:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("65_gebel")
+seconds_per_hour = 60.0
 
 [node name="Timer" type="Timer" parent="Label" unique_id=373177065]
 autostart = true

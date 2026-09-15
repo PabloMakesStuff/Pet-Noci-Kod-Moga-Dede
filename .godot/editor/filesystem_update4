@@ -4,3 +4,15 @@ res://scenes/main_office.tscn
 res://scripts/global_sound.gd
 res://scripts/markoAI.gd
 res://scenes/door_scene.tscn
+res://scenes/camera_system.tscn
+res://global.gd
+res://scripts/main_office.gd
+res://scripts/manu button.gd
+res://scripts/nighttimer.gd
+res://scenes/scene_transition.tscn
+res://scripts/scene_transition.gd
+res://night_complete_scene.gd
+res://scripts/noor.gd
+res://scenes/night_complete_scene.tscn
+res://scenes/tittle.tscn
+res://scripts/marko_odlazi.gd

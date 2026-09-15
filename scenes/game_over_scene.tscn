@@ -3,5 +3,7 @@
 [node name="GameOver" type="Node2D" unique_id=2015207849]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=533071589]
-offset_right = 1252.2144
-offset_bottom = 746.0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 1277.0
+offset_bottom = 723.0
